@@ -1,3 +1,5 @@
+# Doesn't work. Kept for reference
+
 import nltk
 
 from nltk.corpus import movie_reviews
@@ -10,7 +12,7 @@ def document_features(document):
 		features['contains(%s)' % word] = (word in document_words)
 	return features
 
-featuresets = [(document_features(d), c) for (d,c) in documents]
+featuresets = [(document_features(d), c) for (d,c) in word_features]
 classifier = nltk.NaiveBayesClassifier.train(featuresets)
 classifier.classify(document_features(d))
 classifier.show_most_informative_features(5)
