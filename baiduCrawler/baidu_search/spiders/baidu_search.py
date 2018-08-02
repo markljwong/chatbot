@@ -26,7 +26,7 @@ class BaiduSearchSpider(scrapy.Spider):
 	]
 
 	def parse(self, response):
-		filename = "result.html"
+		filename = "../results/result.html"
 		with open(filename, 'wb') as f:
 			f.write(response.body)
 

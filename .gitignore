@@ -7,3 +7,5 @@ __pycache__
 .settings
 virtualenv
 w2vDATA
+raw
+results
