@@ -8,7 +8,7 @@
 import scrapy
 
 
-class BaiduSearchItem(scrapy.Item):
+class BaiducrawlerItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass

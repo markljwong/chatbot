@@ -9,7 +9,7 @@ class ZimukuCrawlerPipeline(object):
 	def process_item(self, item, spider):
 		url = item['url']
 		file_name = url.replace('/','_').replace(':','_')
-		fp = open('../results/' + file_name, 'w')
+		fp = open('results/' + file_name, 'wb')
 		fp.write(item['body'])
 		fp.close()
 		return item

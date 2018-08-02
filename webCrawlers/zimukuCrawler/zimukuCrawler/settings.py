@@ -25,7 +25,10 @@ ROBOTSTXT_OBEY = False
 #CONCURRENT_REQUESTS = 32
 
 # To prevent hanging on downloads
-DOWNLOAD_TIMEOUT = 60
+DOWNLOAD_TIMEOUT = 5
+
+# File storage location
+# FILES_STORE = './results'
 
 # Level of information logged shown in console. 
 # LOG_LEVEL = 'INFO'
@@ -33,10 +36,10 @@ DOWNLOAD_TIMEOUT = 60
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 1
+# DOWNLOAD_DELAY = 1
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 3
-CONCURRENT_REQUESTS_PER_IP = 1
+# CONCURRENT_REQUESTS_PER_DOMAIN = 16
+# CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
@@ -72,6 +75,7 @@ CONCURRENT_REQUESTS_PER_IP = 1
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
 	'zimukuCrawler.pipelines.ZimukuCrawlerPipeline': 300,
+	# 'scrapy.pipelines.files.FilesPipeline': 1
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
