@@ -5,4 +5,5 @@ __pycache__
 .classpath
 .project
 .settings
-CHATBOT
+virtualenv
+w2vDATA
