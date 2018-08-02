@@ -2,18 +2,9 @@ word2vec
 ========
 
 Original from https://code.google.com/p/word2vec/
+Original can no longer be found so retrieved from github user at https://github.com/dav/word2vec
 
-I've copied it to a github project so I can apply and track community patches for my needs (starting with capability for Mac OS X compilation).
-
-- ***makefile and some source has been modified for Mac OS X compilation*** See https://code.google.com/p/word2vec/issues/detail?id=1#c5
-- ***memory patch for word2vec has been applied*** See https://code.google.com/p/word2vec/issues/detail?id=2
-- Project file layout altered
-
-There seems to be a segfault in the compute-accuracy utility.
-
-To get started: 
-    
-    cd scripts && ./demo-word.sh
+I did not include data I used to train. Obviously, those files are far too large, so you'll have to either train your own or obtain pretrained files. 
 
 ------------------------------------------------------
 Original README text follows:
