@@ -1,5 +1,5 @@
 # chatbot
-WIP of a Chinese chatbot (mostly experimentation at the moment) written in python. Follows a quick start guide written by warmheartli (https://github.com/warmheartli/ChatBotCourse)
+WIP of a Chinese chatbot (mostly experimentation at the moment). Follows a quick start guide written by warmheartli (https://github.com/warmheartli/ChatBotCourse)
 
 - Natural Language Processing Experimentation
   - using PyNLPIR (https://pypi.org/project/PyNLPIR/) 
