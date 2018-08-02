@@ -18,8 +18,8 @@ def strip_tags(html):
 	s.feed(html)
 	return s.get_data()
 
-class BaiduSearchSpider(scrapy.Spider):
-	name = "baidu_search"
+class baiduCrawler(scrapy.Spider):
+	name = "baiduCrawler"
 	allowed_domains = ["baidu.com"]
 	start_urls = [
 		"https://www.baidu.com/s?wd=机器学习"
