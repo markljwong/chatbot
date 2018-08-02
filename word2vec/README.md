@@ -2,6 +2,7 @@ word2vec
 ========
 
 Original from https://code.google.com/p/word2vec/
+
 Original can no longer be found so retrieved from github user at https://github.com/dav/word2vec
 
 I did not include data I used to train. Obviously, those files are far too large, so you'll have to either train your own or obtain pretrained files. 
