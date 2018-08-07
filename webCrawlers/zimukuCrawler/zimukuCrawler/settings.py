@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for zimukuCrawler project
+# Scrapy settings for zimuku_crawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,10 +9,10 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'zimukuCrawler'
+BOT_NAME = 'zimuku_crawler'
 
-SPIDER_MODULES = ['zimukuCrawler.spiders']
-NEWSPIDER_MODULE = 'zimukuCrawler.spiders'
+SPIDER_MODULES = ['zimuku_crawler.spiders']
+NEWSPIDER_MODULE = 'zimuku_crawler.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -57,13 +57,13 @@ CONCURRENT_REQUESTS_PER_IP = 1
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'zimukuCrawler.middlewares.ZimukucrawlerSpiderMiddleware': 543,
+#    'zimuku_crawler.middlewares.ZimukucrawlerSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'zimukuCrawler.middlewares.ZimukucrawlerDownloaderMiddleware': 543,
+#    'zimuku_crawler.middlewares.ZimukucrawlerDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -75,7 +75,7 @@ CONCURRENT_REQUESTS_PER_IP = 1
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-	'zimukuCrawler.pipelines.ZimukuCrawlerPipeline': 300,
+	'zimuku_crawler.pipelines.ZimukuCrawlerPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

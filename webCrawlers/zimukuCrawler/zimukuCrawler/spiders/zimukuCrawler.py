@@ -3,10 +3,10 @@ import scrapy
 from w3lib.html import remove_tags
 from scrapy.spiders import Rule
 from scrapy.linkextractors import LinkExtractor
-from zimukuCrawler.items import ZimukuCrawlerItem
+from zimuku_crawler.items import ZimukuCrawlerItem
 
-class zimukuCrawler(scrapy.Spider):
-	name = "zimukuCrawler"
+class ZimukuCrawler(scrapy.Spider):
+	name = "zimuku_crawler"
 	allowed_domains = ["zimuku.cn"]
 	start_urls = [
 		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=1",

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for newZimukuCrawler project
+# Scrapy settings for new_zimuku_crawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,10 +9,10 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'newZimukuCrawler'
+BOT_NAME = 'new_zimuku_crawler'
 
-SPIDER_MODULES = ['newZimukuCrawler.spiders']
-NEWSPIDER_MODULE = 'newZimukuCrawler.spiders'
+SPIDER_MODULES = ['new_zimuku_crawler.spiders']
+NEWSPIDER_MODULE = 'new_zimuku_crawler.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -30,11 +30,11 @@ DOWNLOAD_TIMEOUT = 60
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-#DOWNLOAD_DELAY = 1
+#DOWNLOAD_DELAY = 3
 
 # The download delay setting will honor only one of:
-CONCURRENT_REQUESTS_PER_DOMAIN = 3
-CONCURRENT_REQUESTS_PER_IP = 1
+CONCURRENT_REQUESTS_PER_DOMAIN = 16
+CONCURRENT_REQUESTS_PER_IP = 16
 
 # Disable cookies (enabled by default)
 #COOKIES_ENABLED = False
@@ -51,13 +51,13 @@ CONCURRENT_REQUESTS_PER_IP = 1
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'newZimukuCrawler.middlewares.NewzimukucrawlerSpiderMiddleware': 543,
+#    'new_zimuku_crawler.middlewares.NewZimukuCrawlerSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'newZimukuCrawler.middlewares.NewzimukucrawlerDownloaderMiddleware': 543,
+#    'new_zimuku_crawler.middlewares.NewZimukuCrawlerDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -69,7 +69,7 @@ CONCURRENT_REQUESTS_PER_IP = 1
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-	'newZimukuCrawler.pipelines.NewZimukuCrawlerPipeline': 300,
+    'new_zimuku_crawler.pipelines.NewZimukuCrawlerPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

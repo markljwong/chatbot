@@ -3,10 +3,10 @@ import scrapy
 from w3lib.html import remove_tags
 from scrapy.spiders import Rule
 from scrapy.linkextractors import LinkExtractor
-from newZimukuCrawler.items import NewZimukuCrawlerItem
+from new_zimuku_crawler.items import NewZimukuCrawlerItem
 
-class newZimukuCrawler(scrapy.Spider):
-	name = "newZimukuCrawler"
+class NewZimukuCrawler(scrapy.Spider):
+	name = "new_zimuku_crawler"
 	allowed_domains = [
 		"zimuku.cn",
 		"subku.net",
