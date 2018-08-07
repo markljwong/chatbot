@@ -43,7 +43,7 @@ class ZimukuCrawler(scrapy.Spider):
 		for container in containers:
 			# Get file name for that specific file
 			fileName = container.xpath('p/span')[0].extract()
-			fileName = fileName[16:-7]
+			fileName = remove_tags(fileName)
 
 			# Assign file name to new item
 			item = ZimukuCrawlerItem()

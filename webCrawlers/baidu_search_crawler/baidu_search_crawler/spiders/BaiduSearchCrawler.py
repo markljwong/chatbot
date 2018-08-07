@@ -1,25 +1,9 @@
 import scrapy
 
-from html.parser import HTMLParser
+from w3lib.html import remove_tags
 
-class MLStripper(HTMLParser):
-	def __init__(self):
-		self.reset()
-		self.strict = False
-		self.convert_charrefs= True
-		self.fed = []
-	def handle_data(self, d):
-		self.fed.append(d)
-	def get_data(self):
-		return ''.join(self.fed)
-
-def strip_tags(html):
-	s = MLStripper()
-	s.feed(html)
-	return s.get_data()
-
-class baiduCrawler(scrapy.Spider):
-	name = "baiduCrawler"
+class BaiduSearchCrawler(scrapy.Spider):
+	name = "baidu__search_crawler"
 	allowed_domains = ["baidu.com"]
 	start_urls = [
 		"https://www.baidu.com/s?wd=机器学习"
@@ -35,12 +19,12 @@ class baiduCrawler(scrapy.Spider):
 
 		for container in containers:
 			href = container.xpath('h3/a/@href').extract()[0]
-			title = strip_tags(container.xpath('h3/a').extract()[0])
+			title = remove_tags(container.xpath('h3/a').extract()[0])
 			c_abstract = container.xpath('div/div/div[contains(@class, "c-abstract")]').extract()
 			abstract = ""
 
 			if len(c_abstract) > 0:
-				abstract = strip_tags(c_abstract[0])
+				abstract = remove_tags(c_abstract[0])
 
 			request = scrapy.Request(href, callback=self.parse_url)
 			request.meta['title'] = title
@@ -52,6 +36,6 @@ class baiduCrawler(scrapy.Spider):
 		print("url: " + response.url)
 		print("title: " + response.meta['title'])
 		print("abstract: " + response.meta['abstract'])
-		content = strip_tags(response.selector.xpath('//body').extract()[0])
+		content = remove_tags(response.selector.xpath('//body').extract()[0])
 		print("content_len: " + repr(len(content)))
 

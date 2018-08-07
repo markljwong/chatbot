@@ -17,28 +17,11 @@ for fileName in iterFindFiles(r"./input", "*.zip"):
 	shutil.move(fileName, newFileName)
 
 iii = 0
-for fileName in iterFindFiles(r"./input", "*.ZIP"):
-	iii = iii + 1
-	newFileName = "zip/" + str(i) + "_" + os.path.basename(fileName)
-	print(fileName + " <===> " + newFileName)
-	shutil.move(fileName, newFileName)
-
-
-iii = 0
 for fileName in iterFindFiles(r"./input", "*.rar"):
 	iii = iii + 1
 	newFileName = "rar/" + str(i) + "_" + os.path.basename(fileName)
 	print(fileName + " <===> " + newFileName)
 	shutil.move(fileName, newFileName)
-
-
-iii = 0
-for fileName in iterFindFiles(r"./input", "*.RAR"):
-	iii = iii + 1
-	newFileName = "rar/" + str(i) + "_" + os.path.basename(fileName)
-	print(fileName + " <===> " + newFileName)
-	shutil.move(fileName, newFileName)
-
 
 iii = 0
 for fileName in iterFindFiles(r"./input", "*.7z"):

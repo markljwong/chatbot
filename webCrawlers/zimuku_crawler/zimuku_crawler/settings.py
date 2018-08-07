@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for baiduCrawler project
+# Scrapy settings for zimuku_crawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,10 +9,10 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'baiduCrawler'
+BOT_NAME = 'zimuku_crawler'
 
-SPIDER_MODULES = ['baiduCrawler.spiders']
-NEWSPIDER_MODULE = 'baiduCrawler.spiders'
+SPIDER_MODULES = ['zimuku_crawler.spiders']
+NEWSPIDER_MODULE = 'zimuku_crawler.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -25,15 +25,13 @@ ROBOTSTXT_OBEY = False
 #CONCURRENT_REQUESTS = 32
 
 # To prevent hanging on downloads
-DOWNLOAD_TIMEOUT = 5
-
-# Level of information logged shown in console. 
-# LOG_LEVEL = 'INFO'
+DOWNLOAD_TIMEOUT = 60
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://doc.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 1
+# DOWNLOAD_DELAY = 1
+
 # The download delay setting will honor only one of:
 CONCURRENT_REQUESTS_PER_DOMAIN = 3
 CONCURRENT_REQUESTS_PER_IP = 1
@@ -53,13 +51,13 @@ CONCURRENT_REQUESTS_PER_IP = 1
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'baiduCrawler.middlewares.BaiduSearchSpiderMiddleware': 543,
+#    'zimuku_crawler.middlewares.ZimukucrawlerSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'baiduCrawler.middlewares.BaiduSearchDownloaderMiddleware': 543,
+#    'zimuku_crawler.middlewares.ZimukucrawlerDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -70,9 +68,9 @@ CONCURRENT_REQUESTS_PER_IP = 1
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'baiduCrawler.pipelines.BaiduSearchPipeline': 300,
-#}
+ITEM_PIPELINES = {
+	'zimuku_crawler.pipelines.ZimukuCrawlerPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/autothrottle.html
