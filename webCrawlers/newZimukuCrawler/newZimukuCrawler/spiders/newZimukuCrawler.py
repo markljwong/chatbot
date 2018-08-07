@@ -3,32 +3,13 @@ import scrapy
 from w3lib.html import remove_tags
 from scrapy.spiders import Rule
 from scrapy.linkextractors import LinkExtractor
-from zimukuCrawler.items import ZimukuCrawlerItem
+from newZimukuCrawler.items import NewZimukuCrawlerItem
 
-class zimukuCrawler(scrapy.Spider):
-	name = "zimukuCrawler"
+class newZimukuCrawler(scrapy.Spider):
+	name = "newZimukuCrawler"
 	allowed_domains = ["zimuku.cn"]
 	start_urls = [
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=1",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=2",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=3",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=4",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=5",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=6",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=7",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=8",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=9",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=10",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=11",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=12",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=13",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=14",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=15",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=16",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=17",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=18",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=19",
-		"http://www.zimuku.cn/search?q=&t=onlyst&ad=1&p=20",
+		"https://www.zimuku.cn/search?q=&p=1",
 	]
 
 	rules = (
