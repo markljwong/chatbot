@@ -6,6 +6,15 @@
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-class NewzimukucrawlerPipeline(object):
-    def process_item(self, item, spider):
-        return item
+class NewZimukuCrawlerPipeline(object):
+	def process_item(self, item, spider):
+		# Clean file name
+		fileName = item['fileName']
+		fileName = fileName.replace('/','_').replace(':','_')
+
+		# Write downloaded file to disk
+		fp = open('results/' + fileName, 'wb')
+		fp.write(item['body'])
+		fp.close()
+		
+		return item

@@ -7,8 +7,7 @@
 
 import scrapy
 
-
-class NewzimukucrawlerItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class NewZimukuCrawlerItem(scrapy.Item):
+	# define the fields for your item here like:
+	body = scrapy.Field()
+	fileName = scrapy.Field()

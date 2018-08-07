@@ -76,7 +76,6 @@ CONCURRENT_REQUESTS_PER_IP = 1
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
 	'zimukuCrawler.pipelines.ZimukuCrawlerPipeline': 300,
-	# 'scrapy.pipelines.files.FilesPipeline': 1
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

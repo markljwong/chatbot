@@ -36,7 +36,7 @@ class zimukuCrawler(scrapy.Spider):
 	)
 
 	def parse(self, response):
-		# Find all containers for unique downloads
+		# Find containers for download page link and file name
 		containers = response.selector.xpath('//div[contains(@class, "persub")]')
 
 		# Go through all containers 
@@ -61,7 +61,6 @@ class zimukuCrawler(scrapy.Spider):
 	def parse_detail(self, response):
 		# Get url to actual file download
 		url = response.selector.xpath('//li[contains(@class, "dlsub")]/div/a/@href').extract()[0]
-		print("processing: " + url)
 
 		# Download file and then go parse the file
 		request = scrapy.Request(url, callback = self.parse_file) 
@@ -72,6 +71,5 @@ class zimukuCrawler(scrapy.Spider):
 	def parse_file(self, response):
 		body = response.body
 		item = response.meta['item']
-		item['url'] = response.url
 		item['body'] = body
 		return item

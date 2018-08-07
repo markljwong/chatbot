@@ -7,7 +7,10 @@ from newZimukuCrawler.items import NewZimukuCrawlerItem
 
 class newZimukuCrawler(scrapy.Spider):
 	name = "newZimukuCrawler"
-	allowed_domains = ["zimuku.cn"]
+	allowed_domains = [
+		"zimuku.cn",
+		"subku.net",
+	]
 	start_urls = [
 		"https://www.zimuku.cn/search?q=&p=1",
 	]
@@ -17,21 +20,20 @@ class newZimukuCrawler(scrapy.Spider):
 	)
 
 	def parse(self, response):
-		# Find all containers for unique downloads
-		containers = response.selector.xpath('//div[contains(@class, "persub")]')
+		# Find containers for download page link and file name
+		containers = response.selector.xpath('//div[contains(@class, "item prel")]/div[contains(@class, "title")]/div/table/tbody/tr/td[contains(@class, "first")]')
 
 		# Go through all containers 
 		for container in containers:
 			# Get file name for that specific file
-			fileName = container.xpath('p/span')[0].extract()
-			fileName = fileName[16:-7]
+			fileName = container.xpath('a/@title')[0].extract()
 
 			# Assign file name to new item
-			item = ZimukuCrawlerItem()
+			item = NewZimukuCrawlerItem()
 			item['fileName'] = fileName
 
-			# Get link to download page for that specific file
-			href = container.xpath('h1/a/@href')[0].extract()
+			# Get link to download page
+			href = container.xpath('a/@href')[0].extract()
 
 			# Go to download page
 			url = response.urljoin(href)
@@ -39,20 +41,28 @@ class newZimukuCrawler(scrapy.Spider):
 			request.meta['item'] = item
 			yield request
 
+	# Download page for a specific subtitle
 	def parse_detail(self, response):
-		# Get url to actual file download
-		url = response.selector.xpath('//li[contains(@class, "dlsub")]/div/a/@href').extract()[0]
-		print("processing: " + url)
+		# Get link to provider selection page
+		url = response.selector.xpath('//li[contains(@class, "dlsub")]/div/a[contains(@id, "down1")]/@href').extract()[0]
 
-		# Download file and then go parse the file
-		request = scrapy.Request(url, callback = self.parse_file) 
+		# Go to provider selection page
+		request = scrapy.Request(url, callback = self.parse_download) 
 		request.meta['item'] = response.meta['item']
+		yield request
 
+	# Webpage that opens to select provider
+	def parse_download(self, response):
+		# Get url to actual file download
+		url = response.selector.xpath('//div[contains(@class, "down")]/ul/li/a/@href').extract()[4]
+
+		# Download file
+		request = scrapy.Request(url, callback = self.parse_file)
+		request.meta['item'] = response.meta['item']
 		yield request
 
 	def parse_file(self, response):
 		body = response.body
 		item = response.meta['item']
-		item['url'] = response.url
 		item['body'] = body
 		return item
