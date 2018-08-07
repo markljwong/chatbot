@@ -3,7 +3,7 @@ import scrapy
 from w3lib.html import remove_tags
 
 class BaiduSearchCrawler(scrapy.Spider):
-	name = "baidu__search_crawler"
+	name = "baidu_search_crawler"
 	allowed_domains = ["baidu.com"]
 	start_urls = [
 		"https://www.baidu.com/s?wd=机器学习"
