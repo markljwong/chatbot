@@ -6,6 +6,6 @@ __pycache__
 .project
 .settings
 virtualenv
-w2vDATA
+Data
 raw
 results
