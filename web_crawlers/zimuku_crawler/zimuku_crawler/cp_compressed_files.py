@@ -3,7 +3,7 @@ import shutil
 
 def movefile(inputDir, filetype='zip', counter=0):
 	# Set destination folder name to be file type
-	destination = "./sorted/" + filetype
+	destination = "./" + filetype
 
 	# Check if folder already exists
 	dirExists = 0
@@ -19,7 +19,7 @@ def movefile(inputDir, filetype='zip', counter=0):
 	for pack in os.walk(inputDir):
 		for file in pack[2]:
 			if file.endswith(filetype):
-				fullpath = pack[0] + "\\" + file
+				fullpath = pack[0] + "/" + file
 				print(fullpath)
 				shutil.copy(fullpath, destination)
 				counter += 1
@@ -27,11 +27,5 @@ def movefile(inputDir, filetype='zip', counter=0):
 		print("-------------------------")
 		print("\t==> Found in: " + inputDir + " : " + str(counter) + " files\n")
 
-movefile('extracted', 'ass')
-movefile("extracted", 'lrc')
-movefile("extracted", 'smi')
-movefile("extracted", 'srt')
-movefile("extracted", 'ssa')
-movefile("extracted", 'str')
-movefile("extracted", 'sup')
-movefile("extracted", 'vtt')
+movefile('results', 'zip')
+movefile("results", 'rar')

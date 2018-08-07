@@ -4,10 +4,11 @@ import fnmatch
 import shutil
 import sys
 
-def iterFindFiles(path, fnexp):
+def clearEmptyDir(path, fnexp):
 	for root, dirs, files in os.walk(path):
 		if 0 == len(files) and len(dirs) == 0:
-			print root
+			print(root)
 			os.rmdir(root)
 
-iterFindFiles(r"./input/", "")
+clearEmptyDir(r"./extracted/", "")
+clearEmptyDir(r"./sorted/", "")

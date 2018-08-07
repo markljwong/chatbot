@@ -7,5 +7,8 @@ __pycache__
 .settings
 virtualenv
 Data
+extracted
+sorted
 raw
 results
+
