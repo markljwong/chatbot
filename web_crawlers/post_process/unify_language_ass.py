@@ -1,4 +1,3 @@
-# coding:utf-8
 import chardet
 import os
 import re
@@ -10,7 +9,7 @@ pattern_jp1 = re.compile(jp1)
 jp2=ur"([\u30A0-\u30FF]+)"
 pattern_jp2 = re.compile(jp2)
 
-for root, dirs, files in os.walk("./ass"):
+for root, dirs, files in os.walk("./Data/sorted/ass"):
     file_count = len(files)
     if file_count > 0:
         for index, file in enumerate(files):
