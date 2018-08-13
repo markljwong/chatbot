@@ -11,9 +11,22 @@ class NewZimukuCrawler(scrapy.Spider):
 		"zimuku.cn",
 		"subku.net",
 	]
-	start_urls = [
+
+	# List to hold all search result pages
+	url_list = [
 		"https://www.zimuku.cn/search?q=&p=1",
+		"https://www.zimuku.cn/search?q=&p=2",
 	]
+
+	# Generate search result urls automatically
+	counter = 3
+	while counter <= 2369:
+		url_list.append("https://www.zimuku.cn/search?q=&p=" + str(counter))
+		counter += 1
+
+	print("[INFO]\tURL list generated.")
+
+	start_urls = url_list
 
 	rules = (
 		Rule(LinkExtractor(allow=('\.htm'))),
@@ -26,11 +39,11 @@ class NewZimukuCrawler(scrapy.Spider):
 		# Go through all containers 
 		for container in containers:
 			# Get file name for that specific file
-			fileName = container.xpath('a/@title')[0].extract()
+			file_name = container.xpath('a/@title')[0].extract()
 
 			# Assign file name to new item
 			item = NewZimukuCrawlerItem()
-			item['fileName'] = fileName
+			item['file_name'] = file_name
 
 			# Get link to download page
 			href = container.xpath('a/@href')[0].extract()
@@ -39,6 +52,7 @@ class NewZimukuCrawler(scrapy.Spider):
 			url = response.urljoin(href)
 			request = scrapy.Request(url, callback = self.parse_detail)
 			request.meta['item'] = item
+
 			yield request
 
 	# Download page for a specific subtitle
@@ -49,6 +63,7 @@ class NewZimukuCrawler(scrapy.Spider):
 		# Go to provider selection page
 		request = scrapy.Request(url, callback = self.parse_download) 
 		request.meta['item'] = response.meta['item']
+
 		yield request
 
 	# Webpage that opens to select provider
@@ -59,10 +74,12 @@ class NewZimukuCrawler(scrapy.Spider):
 		# Download file
 		request = scrapy.Request(url, callback = self.parse_file)
 		request.meta['item'] = response.meta['item']
+
 		yield request
 
 	def parse_file(self, response):
 		body = response.body
 		item = response.meta['item']
 		item['body'] = body
+
 		return item

@@ -10,4 +10,4 @@ import scrapy
 class NewZimukuCrawlerItem(scrapy.Item):
 	# define the fields for your item here like:
 	body = scrapy.Field()
-	fileName = scrapy.Field()
+	file_name = scrapy.Field()

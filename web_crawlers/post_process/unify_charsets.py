@@ -7,71 +7,78 @@ import purge
 acceptable_charsets = (
 	'utf-8',
 	'utf-8-sig',
-	'utf-16-le'
 )
 
-def unify_charsets(path):
-	for root, dirs, files in os.walk(path):
+def unify_charsets(data_dir):
+	full_data_dir =Path(data_dir).resolve()
+	input_dir = os.path.join(full_data_dir, 'sorted')
+
+	for root, dirs, files in os.walk(input_dir):
 		for file in files:
 			filepath = os.path.join(root, file)
 
-			print("[INFO]\tProcessing: " + filepath)
+			print("[LOG]\tProcessing: " + filepath)
 
-			# Try to open file at filepath
 			try:
 				with codecs.open(filepath, 'rb') as f:
 					data = f.read()
-			except OSError:
-				print("[ERROR]\tFile could not be opened or doesn't exist. Aborting.\n")
-				exit(1)
+			except OSError as e:
+				print("[ERROR]\tFile: " + file + " <===> File could not be opened or doesn't exist. Skipping.\n")
+				continue
 
-			# Get current encoding of the file
 			detect = chardet.detect(data)
 			encoding = detect["encoding"]
 			confidence = detect["confidence"]
 
+			# File might be empty which returns encoding as NoneType which can't be concat to a string
 			try:
-				print("[INFO]\tEncoding: " + encoding + ", Confidence: " + str(confidence))
-			except TypeError:
-				print("[INFO]\tFile is empty.")
+				print("[LOG]\tFile: " + file + " <===> Encoding: " + encoding + ", Confidence: " + str(confidence))
+			except TypeError as e:
+				print("[ERROR]\tFile: " + file + " <===> File is empty. Cannot concat NoneType to String")
 
-			# If it isn't UTF-8 or ASCII then decode and reencode it as UTF-8
+			# If it isn't an acceptable charset hen decode and reencode it as UTF-8
 			if encoding not in acceptable_charsets:
-				# Try to write memory to disk
 				try:
 					with open(filepath, 'wb') as f:			
 						data = codecs.decode(data, encoding)
 						f.write(codecs.encode(data, 'utf-8'))
-				except:
-					print("[ERROR]\tFile could not be encoded. Skipping.")
+						print("[LOG]\tFile: " + file + " <===> File successfully encoded as utf-8.\n")
+				except Exception as e:
+					print("[ERROR]\tFile: " + file + " <===> File could not be encoded. Skipping.\n")
+					continue
+			else:
+				print("[LOG]\tFile: " + file + " <===> File is already acceptable. Skipping.\n")
+				continue
 
 	print("-------------------------")	
-	print("\tAll files converted to UTF-8.")
+	print("[INFO]\tAll files converted to UTF-8.\n")
 
-def no_bom(path):
-	for root, dirs, files in os.walk(path):
+def no_bom(data_dir):
+	full_data_dir = Path(data_dir).resolve()
+	input_dir = os.path.join(full_data_dir, 'sorted')
+
+	for root, dirs, files in os.walk(input_dir):
 		for file in files:
 			filepath = os.path.join(root, file)
 
-			print("[INFO] Processing " + filepath)
+			print("[LOG]\tProcessing " + filepath)
 
-			# Try to open file at filepath
 			try:
 				with codecs.open(filepath, 'rb') as f:
 					data = f.read()
-			except IOError:
-				print("[ERROR]\tFile could not be opened or doesn't exist. Aborting.\n")
-				exit(1)
+			except OSError as e:
+				print("[ERROR]\tFile: " + file + " <===> File could not be opened or doesn't exist. Aborting.\n")
+				continue
 
-			# Get current encoding of the file
 			detect = chardet.detect(data)
 			encoding = detect["encoding"]
 			confidence = detect["confidence"]
 			
+			# File might be empty which returns encoding as NoneType which can't be concat to a string
 			try:
-				print("[INFO]\tEncoding: " + encoding + ", Confidence: " + str(confidence))
-			except TypeError:
-				print("[INFO]\tFile is empty.")
+				print("[LOG]\tFile: " + file + " <===> Encoding: " + encoding + ", Confidence: " + str(confidence))
+			except TypeError as e:
+				print("[LOG]\tFile: " + file + " <===> File is empty.")
 
 			# If data is encoded in UTF-8 then attempt to remove BOM, otherwise skip
 			if encoding == 'utf-8' or encoding == 'utf-8-sig':
@@ -79,69 +86,65 @@ def no_bom(path):
 					with open(filepath, 'wb') as f:			
 						data = codecs.decode(data, 'utf-8-sig')
 						f.write(codecs.encode(data, 'utf-8'))
-				except:
-					print("[ERROR]\tFile could not be encoded. Skipping.")
+						print("[LOG]\tFile: " + file + " <===> File successfully un-BOM-ified.\n")
+				except Exception as e:
+					print("[ERROR]\tFile: " + file + " <===> File could not be encoded. Skipping.\n")
+					continue
 			else:
-				print("[ERROR]\tFile is not utf-8. Skipping ")
+				print("[LOG]\tFile: " + file + " <===> File is not utf-8. Skipping.\n")
+				continue
 
 	print("-------------------------")	
 	print("[INFO]\tAll files converted to UTF-8 with no BOM.\n")
 
 if __name__ == '__main__':
-	inputDir = ''
+	data_dir = ''
+	do_purge = False
+	do_no_bom = False
 
-	# If user gives input, use that folder
+	# If user gives input, use that as Data directory
 	if len(sys.argv) == 2:
-		inputDir = sys.argv[1]
+		data_dir = sys.argv[1]
 	# Otherwise default to my directory format
 	else:
-		inputDir = './Data/sorted/'
+		data_dir = '.\Data'
 
-	# Unify charsets
-	unify_charsets(inputDir)
-
-	# Clean empty files or directories left over
-	print("[INFO]\tWould you like to purge empty files and directories in the subtitle folder?")
-	print("[INFO]\t[Y]es, [N]o")
+	print("[INFO]\tWould you like to purge empty files and directories after process completes?")
+	print("[INFO]\t[Y]es, [N]o\n")
 
 	purge_response = input("[INPUT]\tCommand: ")
 	
-	# See purge.py for details
 	if purge_response == 'Y' or purge_response == 'y' or purge_response =='Yes' or purge_response == 'yes':
-		print("[INFO]\tPurging subtitle folder...")
-		for suffix in purge.purgatory:
-			purge.purge_files(inputDir, suffix)
-
-		dirPurged = purge.purge_empty_dirs(inputDir)
-
-		print("-------------------------")
-		print("[INFO]\tSubtitle folder purged.\n")
-
+		print("[INFO]\tWill purge directories and files after process completes.\n")
+		do_purge = True
 	else:
-		print("-------------------------")
-		print("[INFO]\tUser cancelled.\n")
+		print("[INFO]\tWill NOT purge directories and files after process completes.\n")
 
-	
-	# Conver UTF-8 with BOM to no BOM
 	print("[INFO]\tWould you like to convert all to UTF-8 with no BOM?")
 	print("[INFO]\tWarning: Takes quite some time)")
-	print("[INFO]\t[Y]es [N]o")
+	print("[INFO]\t[Y]es [N]o\n")
  
 	bom_response = input("[INPUT]\tCommand: ")
 
 	if bom_response == 'Y' or bom_response == 'y' or bom_response =='Yes' or bom_response == 'yes':
-		print("[INFO]\tConverting to UTF-8 without BOM...")
-
-		# If user gives input, use that folder
-		if len(sys.argv) == 2:
-			no_bom(sys.argv[1])
-		# Otherwise default to my directory format
-		else:
-			no_bom('./Data/sorted')
-
+		print("[INFO]\tWill de-BOM applicable UTF-8 files.\n")
+		do_purge = True
 	else:
-		print("-------------------------")
-		print("[INFO]\tUser cancelled.\n")
+		print("[INFO]\tWill NOT de-BOM applicable UTF-8 files.\n")
+
+	print("[INFO]\tBeginning filtration...\n")
+		
+	unify_charsets(data_dir)
+
+	if do_no_bom:
+		print("[INFO]\tConverting to UTF-8 without BOM...")
+		no_bom(data_dir)
+
+	if do_purge:
+		print("[INFO]\tPurging subtitle directory...")
+		for suffix in purge.purgatory:
+			purge.purge_files(data_dir, suffix)
+		purge.purge_empty_dirs(data_dir)
 
 	print("-------------------------")
 	print("[INFO]\tProcess finished.\n")
