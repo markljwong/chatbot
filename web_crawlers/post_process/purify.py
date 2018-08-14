@@ -26,6 +26,8 @@ slash_regex = re.compile(r'\\\w', re.S)
 repeat_regex = re.compile(r'[-=]{10}', re.S)
 
 def purify(data_dir):
+	all_phrases = 0
+	cleaned_phrases = 0
 	pure_phrases = 0
 
 	full_data_dir = Path(data_dir).resolve()
@@ -41,71 +43,112 @@ def purify(data_dir):
 
 	try:
 		for phrase in codecs.decode(data, 'utf-8').split('\n'):
-				phrase = phrase.strip()
+			all_phrases += 1
+			phrase = phrase.strip()
 
-				# Filter non-Chineses phrases
-				need_continue = False
-				for illegal_pattern in illegal_patterns:
-					match_pattern = re.findall(illegal_pattern, phrase)
-					if len(match_pattern) > 0:
-						print("[LOG]\tPhrase: " + phrase + " <===> Phrase is not written in Chineses. Skipping\n", file=sys.stderr)
-						need_continue = True
-						break
-				if need_continue:
-					continue
+			# Filter non-Chineses phrases
+			need_continue = False
+			for illegal_pattern in illegal_patterns:
+				match_pattern = re.findall(illegal_pattern, phrase)
+				if len(match_pattern) > 0:
+					print("[LOG]\tPhrase: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Phrase is not written in Chineses. Skipping\n", file=sys.stderr)
+					need_continue = True
+					break
+			if need_continue:
+				continue
 
-				# Filter unwanted words
-				need_continue = False
-				for filt in filters:
-					try:
-						phrase.index(filt)
-						print("[LOG]\tPhrase: " + phrase + " <===> Filter keyword: " + filt, file=sys.stderr)
-						need_continue = True
-						break
-					except:
-						pass
-				if need_continue:
-					continue
+			# Filter unwanted words
+			need_continue = False
+			for filt in filters:
+				try:
+					phrase.index(filt)
+					print("[LOG]\tPhrase: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Filtered keyword: " + filt, file=sys.stderr)
+					need_continue = True
+					break
+				except:
+					pass
+			if need_continue:
+				continue
 
-				# Filter episodic nomencalture
-				if re.match('.*第.*季.*', phrase):
-					print("[LOG]\tPhrase: " + phrase + " <===> Filter keyword: .*第.*季.*", file=sys.stderr)
-					continue
-				if re.match('.*第.*集.*', phrase):
-					print("[LOG]\tPhrase: " + phrase + " <===> Filter keyword: .*第.*集.*", file=sys.stderr)
-					continue
-				if re.match('.*第.*帧.*', phrase):
-					print("[LOG]\tPhrase: " + phrase + " <===> Filter keyword: .*第.*帧.*", file=sys.stderr)
-					continue
+			# Filter episodic nomencalture
+			if re.match('.*第.*季.*', phrase):
+				print("[LOG]\tPhrase: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Filtered keyword: .*第.*季.*", file=sys.stderr)
+				cleaned_phrases += 1
+				continue
+			if re.match('.*第.*集.*', phrase):
+				print("[LOG]\tPhrase: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Filtered keyword: .*第.*集.*", file=sys.stderr)
+				cleaned_phrases += 1
+				continue
+			if re.match('.*第.*帧.*', phrase):
+				print("[LOG]\tPhrase: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Filtered keyword: .*第.*帧.*", file=sys.stderr)
+				cleaned_phrases += 1
+				continue
 
-				phrase = htmlagregex.sub('', phrase)
-				phrase = brace_regex.sub('', phrase)
-				phrase = slash_regex.sub('', phrase)
+			# Clear font text
+			original_phrase = phrase
+			phrase = phrase.replace(r'\N{\fn黑体', '')
+			if original_phrase != phrase:
+				print("[LOG]\tOriginal: " + original_phrase, file=sys.stderr)
+				print("[LOG]\tNew: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Cleared font text", file=sys.stderr)
+				cleaned_phrases += 1 
 
-				new_phrase = repeat_regex.sub('', phrase)
+			# Clear font text
+			original_phrase = phrase
+			phrase = phrase.replace(r'\N{\fs10', '')
+			if original_phrase != phrase:
+				print("[LOG]\tOriginal: " + original_phrase, file=sys.stderr)
+				print("[LOG]\tNew: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Cleared font text", file=sys.stderr)
+				cleaned_phrases += 1 
 
-				if not len(new_phrase) == len(phrase):
-					continue
+			# Clear regex
+			original_phrase = phrase
+			phrase = htmlagregex.sub('', phrase)
+			if original_phrase != phrase:
+				print("[LOG]\tOriginal: " + original_phrase, file=sys.stderr)
+				print("[LOG]\tNew: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Cleared html regex", file=sys.stderr)
+				cleaned_phrases += 1
 
-				phrase = phrase.replace('-', '').strip() 
+			original_phrase = phrase
+			phrase = brace_regex.sub('', phrase)
+			if original_phrase != phrase:
+				print("[LOG]\tOriginal: " + original_phrase, file=sys.stderr)
+				print("[LOG]\tNew: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Cleared brace regex", file=sys.stderr)
+				cleaned_phrases += 1
 
-				if len(phrase) > 0:
-					try:
-						with open(output_file, 'ab+') as fw:
-							phrase = phrase + '\n'
-							fw.write(codecs.encode(phrase, 'utf-8'))
-							phrase = phrase.replace('\n', '')
-							print("[LOG]\tPhrase: " + phrase + " <===> Written to file", file=sys.stderr)
-							pure_phrases += 1
-					except OSError as e:
-						print("[ERROR]\tOutput file (purified_full.txt) could not be opened for writing. Skipping\n", file=sys.stderr)
+			original_phrase = phrase
+			phrase = slash_regex.sub('', phrase)
+			if original_phrase != phrase:
+				print("[LOG]\tOriginal: " + original_phrase, file=sys.stderr)
+				print("[LOG]\tNew: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Cleared slash regex", file=sys.stderr)
+				cleaned_phrases += 1
+
+			new_phrase = repeat_regex.sub('', phrase)
+
+			if not len(new_phrase) == len(phrase):
+				print("[LOG]\tNew: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Cleared dupes", file=sys.stderr)
+				continue
+
+			phrase = phrase.replace('-', '').strip() 
+
+			if len(phrase) > 0:
+				try:
+					with open(output_file, 'ab+') as fw:
+						phrase = phrase + '\n'
+						fw.write(codecs.encode(phrase, 'utf-8'))
+						phrase = phrase.replace('\n', '')
+						# print("[LOG]\tPhrase: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Written to file", file=sys.stderr)
+						pure_phrases += 1
+				except OSError as e:
+					print("[ERROR]\tOutput file (purified_full.txt) could not be opened for writing. Skipping\n", file=sys.stderr)
 
 	except Exception as e:
-	print("[ERROR]\tInput file (lang_filtered_full.txt) must be in UTF-8 format. Skipping\n", file=sys.stderr)
+		print("[ERROR]\tInput file (lang_filtered_full.txt) must be in UTF-8 format. Quitting\n", file=sys.stderr)
+		exit(1)
 
 	print("-------------------------")	
 	print("[INFO]\tCorpus successfully purified")
-	print("[INFO]\tPhrases extracted: " + str(pure_phrases) + "\n")
+	print("[INFO]\tOriginal phrases: " + str(all_phrases) + ", Pure phrases: " + str(pure_phrases) + 
+		", Pure phrases from cleaning: " + str(cleaned_phrases) + ", Trashed phrases: " + str(all_phrases-pure_phrases) + "\n")
 	
 
 if __name__ == '__main__':
