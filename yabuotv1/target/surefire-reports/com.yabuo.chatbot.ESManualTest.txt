@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Test set: com.yabuo.chatbot.ESManualTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 28.909 s <<< FAILURE! - in com.yabuo.chatbot.ESManualTest
+givenDocumentId_whenJavaObject_thenDeleteDocument(com.yabuo.chatbot.ESManualTest)  Time elapsed: 6.244 s  <<< ERROR!
+java.lang.NoClassDefFoundError: org/locationtech/jts/geom/CoordinateSequenceFactory
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+Caused by: java.lang.ClassNotFoundException: org.locationtech.jts.geom.CoordinateSequenceFactory
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+
+givenSearchParameters_thenReturnResults(com.yabuo.chatbot.ESManualTest)  Time elapsed: 8.979 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+
+givenSearchRequest_whenMatchAll_thenReturnAllResults(com.yabuo.chatbot.ESManualTest)  Time elapsed: 4.148 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+
+givenJsonString_whenJavaObject_thenIndexDocument(com.yabuo.chatbot.ESManualTest)  Time elapsed: 4.098 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+
+givenContentBuilder_whenHelpers_thanIndexJson(com.yabuo.chatbot.ESManualTest)  Time elapsed: 5.274 s  <<< ERROR!
+java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+

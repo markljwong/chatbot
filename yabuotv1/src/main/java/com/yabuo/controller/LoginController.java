@@ -1,7 +1,7 @@
 package com.yabuo.controller;
 
-import com.yabuo.login.User;
-import com.yabuo.login.UserService;
+import com.yabuo.model.User;
+import com.yabuo.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +14,11 @@ import java.util.Date;
 @RestController
 public class LoginController {
 	private UserService userService;
+
+	@Autowired
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
 
 	@RequestMapping({"/", "/index"})
 	public ModelAndView loginPage() {
@@ -39,10 +44,5 @@ public class LoginController {
 			request.getSession().setAttribute("user", user);
 			return new ModelAndView("main");
 		}
-	}
-
-	@Autowired
-	public void setUserService(UserService userService) {
-		this.userService = userService;
 	}
 }

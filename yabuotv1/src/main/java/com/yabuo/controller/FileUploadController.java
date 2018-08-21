@@ -1,7 +1,7 @@
 package com.yabuo.controller;
 
-import com.yabuo.storage.StorageFileNotFoundException;
-import com.yabuo.storage.StorageService;
+import com.yabuo.exception.StorageFileNotFoundException;
+import com.yabuo.service.StorageService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;

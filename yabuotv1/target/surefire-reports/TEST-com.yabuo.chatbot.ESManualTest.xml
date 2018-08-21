@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.yabuo.chatbot.ESManualTest" time="28.909" tests="5" errors="5" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.specification.version" value="10"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\markl\.m2\repository\org\apache\maven\surefire\surefire-booter\2.21.0\surefire-booter-2.21.0.jar;C:\Users\markl\.m2\repository\org\apache\maven\surefire\surefire-api\2.21.0\surefire-api-2.21.0.jar;C:\Users\markl\.m2\repository\org\apache\maven\surefire\surefire-logger-api\2.21.0\surefire-logger-api-2.21.0.jar;C:\Users\markl\Documents\GitHub\chatbot\yabuotv1\target\test-classes;C:\Users\markl\Documents\GitHub\chatbot\yabuotv1\target\classes;C:\Users\markl\.m2\repository\org\springframework\spring-core\5.0.8.RELEASE\spring-core-5.0.8.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-jcl\5.0.7.RELEASE\spring-jcl-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-context\5.0.8.RELEASE\spring-context-5.0.8.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-aop\5.0.7.RELEASE\spring-aop-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-beans\5.0.7.RELEASE\spring-beans-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-expression\5.0.7.RELEASE\spring-expression-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-test\5.0.8.RELEASE\spring-test-5.0.8.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.0.3.RELEASE\spring-boot-starter-web-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter\2.0.3.RELEASE\spring-boot-starter-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot\2.0.3.RELEASE\spring-boot-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.0.3.RELEASE\spring-boot-autoconfigure-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.0.3.RELEASE\spring-boot-starter-logging-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\markl\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\markl\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.10.0\log4j-to-slf4j-2.10.0.jar;C:\Users\markl\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.0.3.RELEASE\spring-boot-starter-json-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.6\jackson-datatype-jdk8-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.6\jackson-datatype-jsr310-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.6\jackson-module-parameter-names-2.9.6.jar;C:\Users\markl\.m2\repository\org\hibernate\validator\hibernate-validator\6.0.10.Final\hibernate-validator-6.0.10.Final.jar;C:\Users\markl\.m2\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;C:\Users\markl\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar;C:\Users\markl\.m2\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;C:\Users\markl\.m2\repository\org\springframework\spring-web\5.0.7.RELEASE\spring-web-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-webmvc\5.0.7.RELEASE\spring-webmvc-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.0.3.RELEASE\spring-boot-starter-tomcat-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\markl\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.31\tomcat-embed-core-8.5.31.jar;C:\Users\markl\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.31\tomcat-embed-el-8.5.31.jar;C:\Users\markl\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.31\tomcat-embed-websocket-8.5.31.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\2.0.3.RELEASE\spring-boot-starter-actuator-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\2.0.3.RELEASE\spring-boot-actuator-autoconfigure-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-actuator\2.0.3.RELEASE\spring-boot-actuator-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\io\micrometer\micrometer-core\1.0.5\micrometer-core-1.0.5.jar;C:\Users\markl\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.0.3.RELEASE\spring-boot-starter-jdbc-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\com\zaxxer\HikariCP\2.7.9\HikariCP-2.7.9.jar;C:\Users\markl\.m2\repository\org\springframework\spring-jdbc\5.0.7.RELEASE\spring-jdbc-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\data\spring-data-elasticsearch\3.0.8.RELEASE\spring-data-elasticsearch-3.0.8.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-tx\5.0.7.RELEASE\spring-tx-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\data\spring-data-commons\2.0.8.RELEASE\spring-data-commons-2.0.8.RELEASE.jar;C:\Users\markl\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\markl\.m2\repository\joda-time\joda-time\2.9.9\joda-time-2.9.9.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\transport-netty4-client\5.6.10\transport-netty4-client-5.6.10.jar;C:\Users\markl\.m2\repository\io\netty\netty-buffer\4.1.25.Final\netty-buffer-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-codec\4.1.25.Final\netty-codec-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-codec-http\4.1.25.Final\netty-codec-http-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-common\4.1.25.Final\netty-common-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-handler\4.1.25.Final\netty-handler-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-resolver\4.1.25.Final\netty-resolver-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-transport\4.1.25.Final\netty-transport-4.1.25.Final.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.6\jackson-core-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.6\jackson-databind-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\markl\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\markl\.m2\repository\org\elasticsearch\elasticsearch\5.6.0\elasticsearch-5.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-core\6.6.0\lucene-core-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-analyzers-common\6.6.0\lucene-analyzers-common-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-backward-codecs\6.6.0\lucene-backward-codecs-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-grouping\6.6.0\lucene-grouping-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-highlighter\6.6.0\lucene-highlighter-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-join\6.6.0\lucene-join-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-memory\6.6.0\lucene-memory-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-misc\6.6.0\lucene-misc-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-queries\6.6.0\lucene-queries-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-queryparser\6.6.0\lucene-queryparser-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-sandbox\6.6.0\lucene-sandbox-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-spatial\6.6.0\lucene-spatial-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-spatial-extras\6.6.0\lucene-spatial-extras-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-spatial3d\6.6.0\lucene-spatial3d-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-suggest\6.6.0\lucene-suggest-6.6.0.jar;C:\Users\markl\.m2\repository\org\elasticsearch\securesm\1.1\securesm-1.1.jar;C:\Users\markl\.m2\repository\net\sf\jopt-simple\jopt-simple\5.0.2\jopt-simple-5.0.2.jar;C:\Users\markl\.m2\repository\com\carrotsearch\hppc\0.7.1\hppc-0.7.1.jar;C:\Users\markl\.m2\repository\org\yaml\snakeyaml\1.19\snakeyaml-1.19.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-smile\2.9.6\jackson-dataformat-smile-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.9.6\jackson-dataformat-yaml-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-cbor\2.9.6\jackson-dataformat-cbor-2.9.6.jar;C:\Users\markl\.m2\repository\com\tdunning\t-digest\3.0\t-digest-3.0.jar;C:\Users\markl\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.9\HdrHistogram-2.1.9.jar;C:\Users\markl\.m2\repository\org\apache\logging\log4j\log4j-api\2.10.0\log4j-api-2.10.0.jar;C:\Users\markl\.m2\repository\org\elasticsearch\jna\4.4.0-1\jna-4.4.0-1.jar;C:\Users\markl\.m2\repository\org\elasticsearch\client\transport\5.6.0\transport-5.6.0.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\transport-netty3-client\5.6.0\transport-netty3-client-5.6.0.jar;C:\Users\markl\.m2\repository\io\netty\netty\3.10.6.Final\netty-3.10.6.Final.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\reindex-client\5.6.0\reindex-client-5.6.0.jar;C:\Users\markl\.m2\repository\org\elasticsearch\client\elasticsearch-rest-client\5.6.0\elasticsearch-rest-client-5.6.0.jar;C:\Users\markl\.m2\repository\org\apache\httpcomponents\httpclient\4.5.5\httpclient-4.5.5.jar;C:\Users\markl\.m2\repository\org\apache\httpcomponents\httpcore\4.4.9\httpcore-4.4.9.jar;C:\Users\markl\.m2\repository\org\apache\httpcomponents\httpasyncclient\4.1.3\httpasyncclient-4.1.3.jar;C:\Users\markl\.m2\repository\org\apache\httpcomponents\httpcore-nio\4.4.9\httpcore-nio-4.4.9.jar;C:\Users\markl\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\markl\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\lang-mustache-client\5.6.0\lang-mustache-client-5.6.0.jar;C:\Users\markl\.m2\repository\com\github\spullara\mustache\java\compiler\0.9.3\compiler-0.9.3.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\percolator-client\5.6.0\percolator-client-5.6.0.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\parent-join-client\5.6.0\parent-join-client-5.6.0.jar;C:\Users\markl\.m2\repository\org\apache\tomcat\embed\tomcat-embed-jasper\8.5.31\tomcat-embed-jasper-8.5.31.jar;C:\Users\markl\.m2\repository\org\eclipse\jdt\ecj\3.12.3\ecj-3.12.3.jar;C:\Users\markl\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar;C:\Users\markl\.m2\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\Users\markl\.m2\repository\com\alibaba\fastjson\1.2.47\fastjson-1.2.47.jar;C:\Users\markl\.m2\repository\com\huaban\jieba-analysis\1.0.2\jieba-analysis-1.0.2.jar;C:\Users\markl\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\markl\.m2\repository\org\locationtech\spatial4j\spatial4j\0.7\spatial4j-0.7.jar;C:\Users\markl\.m2\repository\com\vividsolutions\jts\1.13\jts-1.13.jar;C:\Users\markl\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.1\log4j-core-2.11.1.jar;C:\Users\markl\.m2\repository\net\java\dev\jna\jna\4.5.2\jna-4.5.2.jar;C:\Users\markl\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\markl\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\markl\.m2\repository\org\apache\maven\surefire\surefire-junit4\2.21.0\surefire-junit4-2.21.0.jar"/>
+    <property name="java.vm.vendor" value="&quot;Oracle Corporation&quot;"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="10"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-10.0.1\bin"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter C:\Users\markl\AppData\Local\Temp\surefire13309554575369230427 2018-08-21T10-58-21_000-jvmRun1 surefire3030911873778952003tmp surefire_07302714080097997372tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\markl\Documents\GitHub\chatbot\yabuotv1\target\test-classes;C:\Users\markl\Documents\GitHub\chatbot\yabuotv1\target\classes;C:\Users\markl\.m2\repository\org\springframework\spring-core\5.0.8.RELEASE\spring-core-5.0.8.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-jcl\5.0.7.RELEASE\spring-jcl-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-context\5.0.8.RELEASE\spring-context-5.0.8.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-aop\5.0.7.RELEASE\spring-aop-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-beans\5.0.7.RELEASE\spring-beans-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-expression\5.0.7.RELEASE\spring-expression-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-test\5.0.8.RELEASE\spring-test-5.0.8.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-web\2.0.3.RELEASE\spring-boot-starter-web-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter\2.0.3.RELEASE\spring-boot-starter-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot\2.0.3.RELEASE\spring-boot-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\2.0.3.RELEASE\spring-boot-autoconfigure-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-logging\2.0.3.RELEASE\spring-boot-starter-logging-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\ch\qos\logback\logback-classic\1.2.3\logback-classic-1.2.3.jar;C:\Users\markl\.m2\repository\ch\qos\logback\logback-core\1.2.3\logback-core-1.2.3.jar;C:\Users\markl\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.10.0\log4j-to-slf4j-2.10.0.jar;C:\Users\markl\.m2\repository\org\slf4j\jul-to-slf4j\1.7.25\jul-to-slf4j-1.7.25.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-json\2.0.3.RELEASE\spring-boot-starter-json-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.9.6\jackson-datatype-jdk8-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.9.6\jackson-datatype-jsr310-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.9.6\jackson-module-parameter-names-2.9.6.jar;C:\Users\markl\.m2\repository\org\hibernate\validator\hibernate-validator\6.0.10.Final\hibernate-validator-6.0.10.Final.jar;C:\Users\markl\.m2\repository\javax\validation\validation-api\2.0.1.Final\validation-api-2.0.1.Final.jar;C:\Users\markl\.m2\repository\org\jboss\logging\jboss-logging\3.3.2.Final\jboss-logging-3.3.2.Final.jar;C:\Users\markl\.m2\repository\com\fasterxml\classmate\1.3.4\classmate-1.3.4.jar;C:\Users\markl\.m2\repository\org\springframework\spring-web\5.0.7.RELEASE\spring-web-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-webmvc\5.0.7.RELEASE\spring-webmvc-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\2.0.3.RELEASE\spring-boot-starter-tomcat-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar;C:\Users\markl\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\8.5.31\tomcat-embed-core-8.5.31.jar;C:\Users\markl\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\8.5.31\tomcat-embed-el-8.5.31.jar;C:\Users\markl\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\8.5.31\tomcat-embed-websocket-8.5.31.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\2.0.3.RELEASE\spring-boot-starter-actuator-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\2.0.3.RELEASE\spring-boot-actuator-autoconfigure-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-actuator\2.0.3.RELEASE\spring-boot-actuator-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\io\micrometer\micrometer-core\1.0.5\micrometer-core-1.0.5.jar;C:\Users\markl\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\markl\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.0.3.RELEASE\spring-boot-starter-jdbc-2.0.3.RELEASE.jar;C:\Users\markl\.m2\repository\com\zaxxer\HikariCP\2.7.9\HikariCP-2.7.9.jar;C:\Users\markl\.m2\repository\org\springframework\spring-jdbc\5.0.7.RELEASE\spring-jdbc-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\data\spring-data-elasticsearch\3.0.8.RELEASE\spring-data-elasticsearch-3.0.8.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\spring-tx\5.0.7.RELEASE\spring-tx-5.0.7.RELEASE.jar;C:\Users\markl\.m2\repository\org\springframework\data\spring-data-commons\2.0.8.RELEASE\spring-data-commons-2.0.8.RELEASE.jar;C:\Users\markl\.m2\repository\commons-lang\commons-lang\2.6\commons-lang-2.6.jar;C:\Users\markl\.m2\repository\joda-time\joda-time\2.9.9\joda-time-2.9.9.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\transport-netty4-client\5.6.10\transport-netty4-client-5.6.10.jar;C:\Users\markl\.m2\repository\io\netty\netty-buffer\4.1.25.Final\netty-buffer-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-codec\4.1.25.Final\netty-codec-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-codec-http\4.1.25.Final\netty-codec-http-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-common\4.1.25.Final\netty-common-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-handler\4.1.25.Final\netty-handler-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-resolver\4.1.25.Final\netty-resolver-4.1.25.Final.jar;C:\Users\markl\.m2\repository\io\netty\netty-transport\4.1.25.Final\netty-transport-4.1.25.Final.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.9.6\jackson-core-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.9.6\jackson-databind-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.9.0\jackson-annotations-2.9.0.jar;C:\Users\markl\.m2\repository\org\slf4j\slf4j-api\1.7.25\slf4j-api-1.7.25.jar;C:\Users\markl\.m2\repository\org\elasticsearch\elasticsearch\5.6.0\elasticsearch-5.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-core\6.6.0\lucene-core-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-analyzers-common\6.6.0\lucene-analyzers-common-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-backward-codecs\6.6.0\lucene-backward-codecs-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-grouping\6.6.0\lucene-grouping-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-highlighter\6.6.0\lucene-highlighter-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-join\6.6.0\lucene-join-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-memory\6.6.0\lucene-memory-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-misc\6.6.0\lucene-misc-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-queries\6.6.0\lucene-queries-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-queryparser\6.6.0\lucene-queryparser-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-sandbox\6.6.0\lucene-sandbox-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-spatial\6.6.0\lucene-spatial-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-spatial-extras\6.6.0\lucene-spatial-extras-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-spatial3d\6.6.0\lucene-spatial3d-6.6.0.jar;C:\Users\markl\.m2\repository\org\apache\lucene\lucene-suggest\6.6.0\lucene-suggest-6.6.0.jar;C:\Users\markl\.m2\repository\org\elasticsearch\securesm\1.1\securesm-1.1.jar;C:\Users\markl\.m2\repository\net\sf\jopt-simple\jopt-simple\5.0.2\jopt-simple-5.0.2.jar;C:\Users\markl\.m2\repository\com\carrotsearch\hppc\0.7.1\hppc-0.7.1.jar;C:\Users\markl\.m2\repository\org\yaml\snakeyaml\1.19\snakeyaml-1.19.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-smile\2.9.6\jackson-dataformat-smile-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.9.6\jackson-dataformat-yaml-2.9.6.jar;C:\Users\markl\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-cbor\2.9.6\jackson-dataformat-cbor-2.9.6.jar;C:\Users\markl\.m2\repository\com\tdunning\t-digest\3.0\t-digest-3.0.jar;C:\Users\markl\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.9\HdrHistogram-2.1.9.jar;C:\Users\markl\.m2\repository\org\apache\logging\log4j\log4j-api\2.10.0\log4j-api-2.10.0.jar;C:\Users\markl\.m2\repository\org\elasticsearch\jna\4.4.0-1\jna-4.4.0-1.jar;C:\Users\markl\.m2\repository\org\elasticsearch\client\transport\5.6.0\transport-5.6.0.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\transport-netty3-client\5.6.0\transport-netty3-client-5.6.0.jar;C:\Users\markl\.m2\repository\io\netty\netty\3.10.6.Final\netty-3.10.6.Final.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\reindex-client\5.6.0\reindex-client-5.6.0.jar;C:\Users\markl\.m2\repository\org\elasticsearch\client\elasticsearch-rest-client\5.6.0\elasticsearch-rest-client-5.6.0.jar;C:\Users\markl\.m2\repository\org\apache\httpcomponents\httpclient\4.5.5\httpclient-4.5.5.jar;C:\Users\markl\.m2\repository\org\apache\httpcomponents\httpcore\4.4.9\httpcore-4.4.9.jar;C:\Users\markl\.m2\repository\org\apache\httpcomponents\httpasyncclient\4.1.3\httpasyncclient-4.1.3.jar;C:\Users\markl\.m2\repository\org\apache\httpcomponents\httpcore-nio\4.4.9\httpcore-nio-4.4.9.jar;C:\Users\markl\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\markl\.m2\repository\commons-logging\commons-logging\1.1.3\commons-logging-1.1.3.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\lang-mustache-client\5.6.0\lang-mustache-client-5.6.0.jar;C:\Users\markl\.m2\repository\com\github\spullara\mustache\java\compiler\0.9.3\compiler-0.9.3.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\percolator-client\5.6.0\percolator-client-5.6.0.jar;C:\Users\markl\.m2\repository\org\elasticsearch\plugin\parent-join-client\5.6.0\parent-join-client-5.6.0.jar;C:\Users\markl\.m2\repository\org\apache\tomcat\embed\tomcat-embed-jasper\8.5.31\tomcat-embed-jasper-8.5.31.jar;C:\Users\markl\.m2\repository\org\eclipse\jdt\ecj\3.12.3\ecj-3.12.3.jar;C:\Users\markl\.m2\repository\mysql\mysql-connector-java\5.1.46\mysql-connector-java-5.1.46.jar;C:\Users\markl\.m2\repository\javax\servlet\jstl\1.2\jstl-1.2.jar;C:\Users\markl\.m2\repository\com\alibaba\fastjson\1.2.47\fastjson-1.2.47.jar;C:\Users\markl\.m2\repository\com\huaban\jieba-analysis\1.0.2\jieba-analysis-1.0.2.jar;C:\Users\markl\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\markl\.m2\repository\org\locationtech\spatial4j\spatial4j\0.7\spatial4j-0.7.jar;C:\Users\markl\.m2\repository\com\vividsolutions\jts\1.13\jts-1.13.jar;C:\Users\markl\.m2\repository\org\apache\logging\log4j\log4j-core\2.11.1\log4j-core-2.11.1.jar;C:\Users\markl\.m2\repository\net\java\dev\jna\jna\4.5.2\jna-4.5.2.jar;C:\Users\markl\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\markl\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\markl"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2018-04-17"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-10.0.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\markl\Documents\GitHub\chatbot\yabuotv1"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="10.0.1+10"/>
+    <property name="user.name" value="markl"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="18.3"/>
+    <property name="localRepository" value="C:\Users\markl\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\markl\AppData\Local\Temp\"/>
+    <property name="java.version" value="10.0.1"/>
+    <property name="user.dir" value="C:\Users\markl\Documents\GitHub\chatbot\yabuotv1"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-10.0.1\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\PuTTY\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Microsoft VS Code\bin;C:\Strawberry\c\bin;C:\Strawberry\perl\site\bin;C:\Strawberry\perl\bin;C:\Users\markl\AppData\Local\Microsoft\WindowsApps;C:\Program Files\MySQL\bin;C:\Program Files\Maven\bin;C:\Program Files\Maven\bin;C:\Program Files\MySQL\bin;C:\Program Files\Gradle\bin;C:\Program Files\Spring\bin;C:\Program Files\Python37\;C:\Program Files\Python37\Scripts;C:\Program Files\7-Zip;C:\Miniconda\Scripts;C:\Users\markl\AppData\Local\GitHubDesktop\bin;C:\MinGW\bin;C:\elasticsearch\bin;."/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="10.0.1+10"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="54.0"/>
+  </properties>
+  <testcase name="givenDocumentId_whenJavaObject_thenDeleteDocument" classname="com.yabuo.chatbot.ESManualTest" time="6.244">
+    <error message="org/locationtech/jts/geom/CoordinateSequenceFactory" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: org/locationtech/jts/geom/CoordinateSequenceFactory
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+Caused by: java.lang.ClassNotFoundException: org.locationtech.jts.geom.CoordinateSequenceFactory
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+</error>
+    <system-out><![CDATA[10:58:27.687 [main] INFO org.elasticsearch.plugins.PluginsService - no modules loaded
+10:58:27.704 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+10:58:27.704 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+10:58:27.704 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+10:58:27.704 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+10:58:27.704 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty3Plugin]
+10:58:27.705 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+10:58:27.816 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [force_merge], size [1], queue size [unbounded]
+10:58:27.822 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [fetch_shard_started], core [1], max [8], keep alive [5m]
+10:58:27.823 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [listener], size [2], queue size [unbounded]
+10:58:27.833 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [index], size [4], queue size [200]
+10:58:27.834 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [refresh], core [1], max [2], keep alive [5m]
+10:58:27.835 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [generic], core [4], max [128], keep alive [30s]
+10:58:27.836 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [warmer], core [1], max [2], keep alive [5m]
+10:58:27.836 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [search], size [7], queue size [1k]
+10:58:27.836 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [flush], core [1], max [2], keep alive [5m]
+10:58:27.837 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [fetch_shard_store], core [1], max [8], keep alive [5m]
+10:58:27.838 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [management], core [1], max [5], keep alive [5m]
+10:58:27.840 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [get], size [4], queue size [1k]
+10:58:27.841 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [bulk], size [4], queue size [200]
+10:58:27.841 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [snapshot], core [1], max [2], keep alive [5m]
+10:58:28.622 [main] DEBUG org.elasticsearch.common.network.IfConfig - configuration:
+
+lo
+        Software Loopback Interface 1
+        inet 127.0.0.1 netmask:255.0.0.0 broadcast:127.255.255.255 scope:host
+        inet6 ::1 prefixlen:128 scope:host
+        UP MULTICAST LOOPBACK mtu:-1 index:1
+
+net0
+        Microsoft 6to4 Adapter
+        MULTICAST mtu:-1 index:2
+
+eth0
+        WAN Miniport (IP)
+        MULTICAST mtu:-1 index:3
+
+net1
+        WAN Miniport (IKEv2)
+        MULTICAST mtu:-1 index:4
+
+net2
+        WAN Miniport (SSTP)
+        MULTICAST mtu:-1 index:5
+
+wlan0
+        Intel(R) Dual Band Wireless-AC 8265
+        inet 172.30.38.229 netmask:255.255.248.0 broadcast:172.30.39.255 scope:site
+        hardware F8:59:71:81:2B:67
+        UP MULTICAST mtu:1500 index:6
+
+ppp0
+        WAN Miniport (PPPOE)
+        MULTICAST mtu:-1 index:7
+
+wlan1
+        Microsoft Wi-Fi Direct Virtual Adapter
+        hardware F8:59:71:81:2B:68
+        MULTICAST mtu:1500 index:8
+
+net3
+        Microsoft IP-HTTPS Platform Adapter
+        MULTICAST mtu:-1 index:9
+
+net4
+        WAN Miniport (PPTP)
+        MULTICAST mtu:-1 index:10
+
+net5
+        Bluetooth Device (RFCOMM Protocol TDI)
+        MULTICAST mtu:-1 index:11
+
+eth1
+        Bluetooth Device (Personal Area Network)
+        hardware F8:59:71:81:2B:6B
+        MULTICAST mtu:1500 index:12
+
+eth2
+        Apple Mobile Device Ethernet
+        MULTICAST mtu:-1 index:13
+
+eth3
+        ExpressVPN Tap Adapter
+        inet 10.191.0.10 netmask:255.255.255.252 broadcast:10.191.0.11 scope:site
+        hardware 00:FF:76:95:09:A9
+        UP MULTICAST mtu:1500 index:14
+
+eth4
+        WAN Miniport (Network Monitor)
+        MULTICAST mtu:-1 index:15
+
+net6
+        Microsoft Teredo Tunneling Adapter
+        MULTICAST mtu:-1 index:16
+
+eth5
+        WAN Miniport (IPv6)
+        MULTICAST mtu:-1 index:17
+
+eth6
+        Realtek USB GbE Family Controller
+        MULTICAST mtu:-1 index:18
+
+eth7
+        Microsoft Kernel Debug Network Adapter
+        MULTICAST mtu:-1 index:19
+
+wlan2
+        Microsoft Wi-Fi Direct Virtual Adapter #2
+        hardware FA:59:71:81:2B:67
+        MULTICAST mtu:1500 index:20
+
+net7
+        WAN Miniport (L2TP)
+        MULTICAST mtu:-1 index:21
+
+wlan3
+        Intel(R) Dual Band Wireless-AC 8265-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:22
+
+wlan4
+        Intel(R) Dual Band Wireless-AC 8265-Virtual WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:23
+
+wlan5
+        Intel(R) Dual Band Wireless-AC 8265-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:24
+
+wlan6
+        Intel(R) Dual Band Wireless-AC 8265-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:25
+
+wlan7
+        Intel(R) Dual Band Wireless-AC 8265-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:26
+
+wlan8
+        Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:27
+
+wlan9
+        Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:28
+
+wlan10
+        Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:29
+
+wlan11
+        Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:30
+
+eth8
+        WAN Miniport (IP)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:31
+
+eth9
+        WAN Miniport (IP)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:32
+
+eth10
+        WAN Miniport (IPv6)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:33
+
+eth11
+        WAN Miniport (IPv6)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:34
+
+eth12
+        WAN Miniport (Network Monitor)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:35
+
+eth13
+        WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:36
+
+wlan12
+        Microsoft Wi-Fi Direct Virtual Adapter #2-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:37
+
+wlan13
+        Microsoft Wi-Fi Direct Virtual Adapter #2-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:38
+
+wlan14
+        Microsoft Wi-Fi Direct Virtual Adapter #2-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:39
+
+wlan15
+        Microsoft Wi-Fi Direct Virtual Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:40
+
+eth14
+        ExpressVPN Tap Adapter-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:41
+
+eth15
+        ExpressVPN Tap Adapter-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:42
+
+eth16
+        ExpressVPN Tap Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:43
+
+]]></system-out>
+  </testcase>
+  <testcase name="givenSearchParameters_thenReturnResults" classname="com.yabuo.chatbot.ESManualTest" time="8.979">
+    <error message="Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+</error>
+    <system-out><![CDATA[10:58:29.979 [main] INFO org.elasticsearch.plugins.PluginsService - no modules loaded
+10:58:29.979 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+10:58:29.979 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+10:58:29.979 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+10:58:29.979 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+10:58:29.979 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty3Plugin]
+10:58:29.980 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+10:58:29.982 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [force_merge], size [1], queue size [unbounded]
+10:58:29.983 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [fetch_shard_started], core [1], max [8], keep alive [5m]
+10:58:29.984 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [listener], size [2], queue size [unbounded]
+10:58:29.984 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [index], size [4], queue size [200]
+10:58:29.984 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [refresh], core [1], max [2], keep alive [5m]
+10:58:29.985 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [generic], core [4], max [128], keep alive [30s]
+10:58:29.985 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [warmer], core [1], max [2], keep alive [5m]
+10:58:29.985 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [search], size [7], queue size [1k]
+10:58:29.986 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [flush], core [1], max [2], keep alive [5m]
+10:58:29.987 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [fetch_shard_store], core [1], max [8], keep alive [5m]
+10:58:29.987 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [management], core [1], max [5], keep alive [5m]
+10:58:29.987 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [get], size [4], queue size [1k]
+10:58:29.988 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [bulk], size [4], queue size [200]
+10:58:29.988 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [snapshot], core [1], max [2], keep alive [5m]
+10:58:30.765 [main] DEBUG org.elasticsearch.common.network.IfConfig - configuration:
+
+lo
+        Software Loopback Interface 1
+        inet 127.0.0.1 netmask:255.0.0.0 broadcast:127.255.255.255 scope:host
+        inet6 ::1 prefixlen:128 scope:host
+        UP MULTICAST LOOPBACK mtu:-1 index:1
+
+net0
+        Microsoft 6to4 Adapter
+        MULTICAST mtu:-1 index:2
+
+eth0
+        WAN Miniport (IP)
+        MULTICAST mtu:-1 index:3
+
+net1
+        WAN Miniport (IKEv2)
+        MULTICAST mtu:-1 index:4
+
+net2
+        WAN Miniport (SSTP)
+        MULTICAST mtu:-1 index:5
+
+wlan0
+        Intel(R) Dual Band Wireless-AC 8265
+        inet 172.30.38.229 netmask:255.255.248.0 broadcast:172.30.39.255 scope:site
+        hardware F8:59:71:81:2B:67
+        UP MULTICAST mtu:1500 index:6
+
+ppp0
+        WAN Miniport (PPPOE)
+        MULTICAST mtu:-1 index:7
+
+wlan1
+        Microsoft Wi-Fi Direct Virtual Adapter
+        hardware F8:59:71:81:2B:68
+        MULTICAST mtu:1500 index:8
+
+net3
+        Microsoft IP-HTTPS Platform Adapter
+        MULTICAST mtu:-1 index:9
+
+net4
+        WAN Miniport (PPTP)
+        MULTICAST mtu:-1 index:10
+
+net5
+        Bluetooth Device (RFCOMM Protocol TDI)
+        MULTICAST mtu:-1 index:11
+
+eth1
+        Bluetooth Device (Personal Area Network)
+        hardware F8:59:71:81:2B:6B
+        MULTICAST mtu:1500 index:12
+
+eth2
+        Apple Mobile Device Ethernet
+        MULTICAST mtu:-1 index:13
+
+eth3
+        ExpressVPN Tap Adapter
+        inet 10.191.0.10 netmask:255.255.255.252 broadcast:10.191.0.11 scope:site
+        hardware 00:FF:76:95:09:A9
+        UP MULTICAST mtu:1500 index:14
+
+eth4
+        WAN Miniport (Network Monitor)
+        MULTICAST mtu:-1 index:15
+
+net6
+        Microsoft Teredo Tunneling Adapter
+        MULTICAST mtu:-1 index:16
+
+eth5
+        WAN Miniport (IPv6)
+        MULTICAST mtu:-1 index:17
+
+eth6
+        Realtek USB GbE Family Controller
+        MULTICAST mtu:-1 index:18
+
+eth7
+        Microsoft Kernel Debug Network Adapter
+        MULTICAST mtu:-1 index:19
+
+wlan2
+        Microsoft Wi-Fi Direct Virtual Adapter #2
+        hardware FA:59:71:81:2B:67
+        MULTICAST mtu:1500 index:20
+
+net7
+        WAN Miniport (L2TP)
+        MULTICAST mtu:-1 index:21
+
+wlan3
+        Intel(R) Dual Band Wireless-AC 8265-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:22
+
+wlan4
+        Intel(R) Dual Band Wireless-AC 8265-Virtual WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:23
+
+wlan5
+        Intel(R) Dual Band Wireless-AC 8265-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:24
+
+wlan6
+        Intel(R) Dual Band Wireless-AC 8265-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:25
+
+wlan7
+        Intel(R) Dual Band Wireless-AC 8265-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:26
+
+wlan8
+        Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:27
+
+wlan9
+        Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:28
+
+wlan10
+        Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:29
+
+wlan11
+        Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:30
+
+eth8
+        WAN Miniport (IP)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:31
+
+eth9
+        WAN Miniport (IP)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:32
+
+eth10
+        WAN Miniport (IPv6)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:33
+
+eth11
+        WAN Miniport (IPv6)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:34
+
+eth12
+        WAN Miniport (Network Monitor)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:35
+
+eth13
+        WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:36
+
+wlan12
+        Microsoft Wi-Fi Direct Virtual Adapter #2-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:37
+
+wlan13
+        Microsoft Wi-Fi Direct Virtual Adapter #2-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:38
+
+wlan14
+        Microsoft Wi-Fi Direct Virtual Adapter #2-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:39
+
+wlan15
+        Microsoft Wi-Fi Direct Virtual Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:40
+
+eth14
+        ExpressVPN Tap Adapter-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:41
+
+eth15
+        ExpressVPN Tap Adapter-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:42
+
+eth16
+        ExpressVPN Tap Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:43
+
+]]></system-out>
+  </testcase>
+  <testcase name="givenSearchRequest_whenMatchAll_thenReturnAllResults" classname="com.yabuo.chatbot.ESManualTest" time="4.148">
+    <error message="Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+</error>
+    <system-out><![CDATA[10:58:30.786 [main] INFO org.elasticsearch.plugins.PluginsService - no modules loaded
+10:58:30.786 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+10:58:30.786 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+10:58:30.786 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+10:58:30.786 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+10:58:30.787 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty3Plugin]
+10:58:30.787 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+10:58:30.789 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [force_merge], size [1], queue size [unbounded]
+10:58:30.789 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [fetch_shard_started], core [1], max [8], keep alive [5m]
+10:58:30.790 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [listener], size [2], queue size [unbounded]
+10:58:30.791 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [index], size [4], queue size [200]
+10:58:30.791 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [refresh], core [1], max [2], keep alive [5m]
+10:58:30.792 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [generic], core [4], max [128], keep alive [30s]
+10:58:30.793 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [warmer], core [1], max [2], keep alive [5m]
+10:58:30.794 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [search], size [7], queue size [1k]
+10:58:30.794 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [flush], core [1], max [2], keep alive [5m]
+10:58:30.795 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [fetch_shard_store], core [1], max [8], keep alive [5m]
+10:58:30.795 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [management], core [1], max [5], keep alive [5m]
+10:58:30.796 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [get], size [4], queue size [1k]
+10:58:30.797 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [bulk], size [4], queue size [200]
+10:58:30.799 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [snapshot], core [1], max [2], keep alive [5m]
+10:58:31.473 [main] DEBUG org.elasticsearch.common.network.IfConfig - configuration:
+
+lo
+        Software Loopback Interface 1
+        inet 127.0.0.1 netmask:255.0.0.0 broadcast:127.255.255.255 scope:host
+        inet6 ::1 prefixlen:128 scope:host
+        UP MULTICAST LOOPBACK mtu:-1 index:1
+
+net0
+        Microsoft 6to4 Adapter
+        MULTICAST mtu:-1 index:2
+
+eth0
+        WAN Miniport (IP)
+        MULTICAST mtu:-1 index:3
+
+net1
+        WAN Miniport (IKEv2)
+        MULTICAST mtu:-1 index:4
+
+net2
+        WAN Miniport (SSTP)
+        MULTICAST mtu:-1 index:5
+
+wlan0
+        Intel(R) Dual Band Wireless-AC 8265
+        inet 172.30.38.229 netmask:255.255.248.0 broadcast:172.30.39.255 scope:site
+        hardware F8:59:71:81:2B:67
+        UP MULTICAST mtu:1500 index:6
+
+ppp0
+        WAN Miniport (PPPOE)
+        MULTICAST mtu:-1 index:7
+
+wlan1
+        Microsoft Wi-Fi Direct Virtual Adapter
+        hardware F8:59:71:81:2B:68
+        MULTICAST mtu:1500 index:8
+
+net3
+        Microsoft IP-HTTPS Platform Adapter
+        MULTICAST mtu:-1 index:9
+
+net4
+        WAN Miniport (PPTP)
+        MULTICAST mtu:-1 index:10
+
+net5
+        Bluetooth Device (RFCOMM Protocol TDI)
+        MULTICAST mtu:-1 index:11
+
+eth1
+        Bluetooth Device (Personal Area Network)
+        hardware F8:59:71:81:2B:6B
+        MULTICAST mtu:1500 index:12
+
+eth2
+        Apple Mobile Device Ethernet
+        MULTICAST mtu:-1 index:13
+
+eth3
+        ExpressVPN Tap Adapter
+        inet 10.191.0.10 netmask:255.255.255.252 broadcast:10.191.0.11 scope:site
+        hardware 00:FF:76:95:09:A9
+        UP MULTICAST mtu:1500 index:14
+
+eth4
+        WAN Miniport (Network Monitor)
+        MULTICAST mtu:-1 index:15
+
+net6
+        Microsoft Teredo Tunneling Adapter
+        MULTICAST mtu:-1 index:16
+
+eth5
+        WAN Miniport (IPv6)
+        MULTICAST mtu:-1 index:17
+
+eth6
+        Realtek USB GbE Family Controller
+        MULTICAST mtu:-1 index:18
+
+eth7
+        Microsoft Kernel Debug Network Adapter
+        MULTICAST mtu:-1 index:19
+
+wlan2
+        Microsoft Wi-Fi Direct Virtual Adapter #2
+        hardware FA:59:71:81:2B:67
+        MULTICAST mtu:1500 index:20
+
+net7
+        WAN Miniport (L2TP)
+        MULTICAST mtu:-1 index:21
+
+wlan3
+        Intel(R) Dual Band Wireless-AC 8265-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:22
+
+wlan4
+        Intel(R) Dual Band Wireless-AC 8265-Virtual WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:23
+
+wlan5
+        Intel(R) Dual Band Wireless-AC 8265-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:24
+
+wlan6
+        Intel(R) Dual Band Wireless-AC 8265-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:25
+
+wlan7
+        Intel(R) Dual Band Wireless-AC 8265-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:26
+
+wlan8
+        Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:27
+
+wlan9
+        Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:28
+
+wlan10
+        Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:29
+
+wlan11
+        Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:30
+
+eth8
+        WAN Miniport (IP)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:31
+
+eth9
+        WAN Miniport (IP)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:32
+
+eth10
+        WAN Miniport (IPv6)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:33
+
+eth11
+        WAN Miniport (IPv6)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:34
+
+eth12
+        WAN Miniport (Network Monitor)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:35
+
+eth13
+        WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:36
+
+wlan12
+        Microsoft Wi-Fi Direct Virtual Adapter #2-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:37
+
+wlan13
+        Microsoft Wi-Fi Direct Virtual Adapter #2-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:38
+
+wlan14
+        Microsoft Wi-Fi Direct Virtual Adapter #2-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:39
+
+wlan15
+        Microsoft Wi-Fi Direct Virtual Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:40
+
+eth14
+        ExpressVPN Tap Adapter-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:41
+
+eth15
+        ExpressVPN Tap Adapter-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:42
+
+eth16
+        ExpressVPN Tap Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:43
+
+]]></system-out>
+  </testcase>
+  <testcase name="givenJsonString_whenJavaObject_thenIndexDocument" classname="com.yabuo.chatbot.ESManualTest" time="4.098">
+    <error message="Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+</error>
+    <system-out><![CDATA[10:58:31.488 [main] INFO org.elasticsearch.plugins.PluginsService - no modules loaded
+10:58:31.489 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+10:58:31.489 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+10:58:31.489 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+10:58:31.489 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+10:58:31.489 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty3Plugin]
+10:58:31.489 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+10:58:31.491 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [force_merge], size [1], queue size [unbounded]
+10:58:31.491 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [fetch_shard_started], core [1], max [8], keep alive [5m]
+10:58:31.493 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [listener], size [2], queue size [unbounded]
+10:58:31.493 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [index], size [4], queue size [200]
+10:58:31.493 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [refresh], core [1], max [2], keep alive [5m]
+10:58:31.493 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [generic], core [4], max [128], keep alive [30s]
+10:58:31.494 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [warmer], core [1], max [2], keep alive [5m]
+10:58:31.495 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [search], size [7], queue size [1k]
+10:58:31.496 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [flush], core [1], max [2], keep alive [5m]
+10:58:31.496 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [fetch_shard_store], core [1], max [8], keep alive [5m]
+10:58:31.496 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [management], core [1], max [5], keep alive [5m]
+10:58:31.497 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [get], size [4], queue size [1k]
+10:58:31.498 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [bulk], size [4], queue size [200]
+10:58:31.499 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [snapshot], core [1], max [2], keep alive [5m]
+10:58:32.296 [main] DEBUG org.elasticsearch.common.network.IfConfig - configuration:
+
+lo
+        Software Loopback Interface 1
+        inet 127.0.0.1 netmask:255.0.0.0 broadcast:127.255.255.255 scope:host
+        inet6 ::1 prefixlen:128 scope:host
+        UP MULTICAST LOOPBACK mtu:-1 index:1
+
+net0
+        Microsoft 6to4 Adapter
+        MULTICAST mtu:-1 index:2
+
+eth0
+        WAN Miniport (IP)
+        MULTICAST mtu:-1 index:3
+
+net1
+        WAN Miniport (IKEv2)
+        MULTICAST mtu:-1 index:4
+
+net2
+        WAN Miniport (SSTP)
+        MULTICAST mtu:-1 index:5
+
+wlan0
+        Intel(R) Dual Band Wireless-AC 8265
+        inet 172.30.38.229 netmask:255.255.248.0 broadcast:172.30.39.255 scope:site
+        hardware F8:59:71:81:2B:67
+        UP MULTICAST mtu:1500 index:6
+
+ppp0
+        WAN Miniport (PPPOE)
+        MULTICAST mtu:-1 index:7
+
+wlan1
+        Microsoft Wi-Fi Direct Virtual Adapter
+        hardware F8:59:71:81:2B:68
+        MULTICAST mtu:1500 index:8
+
+net3
+        Microsoft IP-HTTPS Platform Adapter
+        MULTICAST mtu:-1 index:9
+
+net4
+        WAN Miniport (PPTP)
+        MULTICAST mtu:-1 index:10
+
+net5
+        Bluetooth Device (RFCOMM Protocol TDI)
+        MULTICAST mtu:-1 index:11
+
+eth1
+        Bluetooth Device (Personal Area Network)
+        hardware F8:59:71:81:2B:6B
+        MULTICAST mtu:1500 index:12
+
+eth2
+        Apple Mobile Device Ethernet
+        MULTICAST mtu:-1 index:13
+
+eth3
+        ExpressVPN Tap Adapter
+        inet 10.191.0.10 netmask:255.255.255.252 broadcast:10.191.0.11 scope:site
+        hardware 00:FF:76:95:09:A9
+        UP MULTICAST mtu:1500 index:14
+
+eth4
+        WAN Miniport (Network Monitor)
+        MULTICAST mtu:-1 index:15
+
+net6
+        Microsoft Teredo Tunneling Adapter
+        MULTICAST mtu:-1 index:16
+
+eth5
+        WAN Miniport (IPv6)
+        MULTICAST mtu:-1 index:17
+
+eth6
+        Realtek USB GbE Family Controller
+        MULTICAST mtu:-1 index:18
+
+eth7
+        Microsoft Kernel Debug Network Adapter
+        MULTICAST mtu:-1 index:19
+
+wlan2
+        Microsoft Wi-Fi Direct Virtual Adapter #2
+        hardware FA:59:71:81:2B:67
+        MULTICAST mtu:1500 index:20
+
+net7
+        WAN Miniport (L2TP)
+        MULTICAST mtu:-1 index:21
+
+wlan3
+        Intel(R) Dual Band Wireless-AC 8265-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:22
+
+wlan4
+        Intel(R) Dual Band Wireless-AC 8265-Virtual WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:23
+
+wlan5
+        Intel(R) Dual Band Wireless-AC 8265-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:24
+
+wlan6
+        Intel(R) Dual Band Wireless-AC 8265-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:25
+
+wlan7
+        Intel(R) Dual Band Wireless-AC 8265-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:26
+
+wlan8
+        Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:27
+
+wlan9
+        Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:28
+
+wlan10
+        Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:29
+
+wlan11
+        Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:30
+
+eth8
+        WAN Miniport (IP)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:31
+
+eth9
+        WAN Miniport (IP)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:32
+
+eth10
+        WAN Miniport (IPv6)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:33
+
+eth11
+        WAN Miniport (IPv6)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:34
+
+eth12
+        WAN Miniport (Network Monitor)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:35
+
+eth13
+        WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:36
+
+wlan12
+        Microsoft Wi-Fi Direct Virtual Adapter #2-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:37
+
+wlan13
+        Microsoft Wi-Fi Direct Virtual Adapter #2-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:38
+
+wlan14
+        Microsoft Wi-Fi Direct Virtual Adapter #2-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:39
+
+wlan15
+        Microsoft Wi-Fi Direct Virtual Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:40
+
+eth14
+        ExpressVPN Tap Adapter-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:41
+
+eth15
+        ExpressVPN Tap Adapter-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:42
+
+eth16
+        ExpressVPN Tap Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:43
+
+]]></system-out>
+  </testcase>
+  <testcase name="givenContentBuilder_whenHelpers_thanIndexJson" classname="com.yabuo.chatbot.ESManualTest" time="5.274">
+    <error message="Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder" type="java.lang.NoClassDefFoundError">java.lang.NoClassDefFoundError: Could not initialize class org.elasticsearch.common.geo.builders.PointBuilder
+	at com.yabuo.chatbot.ESManualTest.setUp(ESManualTest.java:48)
+</error>
+    <system-out><![CDATA[10:58:32.346 [main] INFO org.elasticsearch.plugins.PluginsService - no modules loaded
+10:58:32.347 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.index.reindex.ReindexPlugin]
+10:58:32.347 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.join.ParentJoinPlugin]
+10:58:32.347 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.percolator.PercolatorPlugin]
+10:58:32.347 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.script.mustache.MustachePlugin]
+10:58:32.347 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty3Plugin]
+10:58:32.347 [main] INFO org.elasticsearch.plugins.PluginsService - loaded plugin [org.elasticsearch.transport.Netty4Plugin]
+10:58:32.348 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [force_merge], size [1], queue size [unbounded]
+10:58:32.349 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [fetch_shard_started], core [1], max [8], keep alive [5m]
+10:58:32.349 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [listener], size [2], queue size [unbounded]
+10:58:32.351 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [index], size [4], queue size [200]
+10:58:32.351 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [refresh], core [1], max [2], keep alive [5m]
+10:58:32.351 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [generic], core [4], max [128], keep alive [30s]
+10:58:32.351 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [warmer], core [1], max [2], keep alive [5m]
+10:58:32.352 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [search], size [7], queue size [1k]
+10:58:32.352 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [flush], core [1], max [2], keep alive [5m]
+10:58:32.352 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [fetch_shard_store], core [1], max [8], keep alive [5m]
+10:58:32.352 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [management], core [1], max [5], keep alive [5m]
+10:58:32.353 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [get], size [4], queue size [1k]
+10:58:32.353 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [bulk], size [4], queue size [200]
+10:58:32.353 [main] DEBUG org.elasticsearch.threadpool.ThreadPool - created thread pool: name [snapshot], core [1], max [2], keep alive [5m]
+10:58:33.096 [main] DEBUG org.elasticsearch.common.network.IfConfig - configuration:
+
+lo
+        Software Loopback Interface 1
+        inet 127.0.0.1 netmask:255.0.0.0 broadcast:127.255.255.255 scope:host
+        inet6 ::1 prefixlen:128 scope:host
+        UP MULTICAST LOOPBACK mtu:-1 index:1
+
+net0
+        Microsoft 6to4 Adapter
+        MULTICAST mtu:-1 index:2
+
+eth0
+        WAN Miniport (IP)
+        MULTICAST mtu:-1 index:3
+
+net1
+        WAN Miniport (IKEv2)
+        MULTICAST mtu:-1 index:4
+
+net2
+        WAN Miniport (SSTP)
+        MULTICAST mtu:-1 index:5
+
+wlan0
+        Intel(R) Dual Band Wireless-AC 8265
+        inet 172.30.38.229 netmask:255.255.248.0 broadcast:172.30.39.255 scope:site
+        hardware F8:59:71:81:2B:67
+        UP MULTICAST mtu:1500 index:6
+
+ppp0
+        WAN Miniport (PPPOE)
+        MULTICAST mtu:-1 index:7
+
+wlan1
+        Microsoft Wi-Fi Direct Virtual Adapter
+        hardware F8:59:71:81:2B:68
+        MULTICAST mtu:1500 index:8
+
+net3
+        Microsoft IP-HTTPS Platform Adapter
+        MULTICAST mtu:-1 index:9
+
+net4
+        WAN Miniport (PPTP)
+        MULTICAST mtu:-1 index:10
+
+net5
+        Bluetooth Device (RFCOMM Protocol TDI)
+        MULTICAST mtu:-1 index:11
+
+eth1
+        Bluetooth Device (Personal Area Network)
+        hardware F8:59:71:81:2B:6B
+        MULTICAST mtu:1500 index:12
+
+eth2
+        Apple Mobile Device Ethernet
+        MULTICAST mtu:-1 index:13
+
+eth3
+        ExpressVPN Tap Adapter
+        inet 10.191.0.10 netmask:255.255.255.252 broadcast:10.191.0.11 scope:site
+        hardware 00:FF:76:95:09:A9
+        UP MULTICAST mtu:1500 index:14
+
+eth4
+        WAN Miniport (Network Monitor)
+        MULTICAST mtu:-1 index:15
+
+net6
+        Microsoft Teredo Tunneling Adapter
+        MULTICAST mtu:-1 index:16
+
+eth5
+        WAN Miniport (IPv6)
+        MULTICAST mtu:-1 index:17
+
+eth6
+        Realtek USB GbE Family Controller
+        MULTICAST mtu:-1 index:18
+
+eth7
+        Microsoft Kernel Debug Network Adapter
+        MULTICAST mtu:-1 index:19
+
+wlan2
+        Microsoft Wi-Fi Direct Virtual Adapter #2
+        hardware FA:59:71:81:2B:67
+        MULTICAST mtu:1500 index:20
+
+net7
+        WAN Miniport (L2TP)
+        MULTICAST mtu:-1 index:21
+
+wlan3
+        Intel(R) Dual Band Wireless-AC 8265-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:22
+
+wlan4
+        Intel(R) Dual Band Wireless-AC 8265-Virtual WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:23
+
+wlan5
+        Intel(R) Dual Band Wireless-AC 8265-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:24
+
+wlan6
+        Intel(R) Dual Band Wireless-AC 8265-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:25
+
+wlan7
+        Intel(R) Dual Band Wireless-AC 8265-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:26
+
+wlan8
+        Microsoft Wi-Fi Direct Virtual Adapter-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:27
+
+wlan9
+        Microsoft Wi-Fi Direct Virtual Adapter-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:28
+
+wlan10
+        Microsoft Wi-Fi Direct Virtual Adapter-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:29
+
+wlan11
+        Microsoft Wi-Fi Direct Virtual Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:30
+
+eth8
+        WAN Miniport (IP)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:31
+
+eth9
+        WAN Miniport (IP)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:32
+
+eth10
+        WAN Miniport (IPv6)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:33
+
+eth11
+        WAN Miniport (IPv6)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:34
+
+eth12
+        WAN Miniport (Network Monitor)-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:35
+
+eth13
+        WAN Miniport (Network Monitor)-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:36
+
+wlan12
+        Microsoft Wi-Fi Direct Virtual Adapter #2-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:37
+
+wlan13
+        Microsoft Wi-Fi Direct Virtual Adapter #2-Native WiFi Filter Driver-0000
+        MULTICAST mtu:-1 index:38
+
+wlan14
+        Microsoft Wi-Fi Direct Virtual Adapter #2-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:39
+
+wlan15
+        Microsoft Wi-Fi Direct Virtual Adapter #2-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:40
+
+eth14
+        ExpressVPN Tap Adapter-WFP Native MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:41
+
+eth15
+        ExpressVPN Tap Adapter-QoS Packet Scheduler-0000
+        MULTICAST mtu:-1 index:42
+
+eth16
+        ExpressVPN Tap Adapter-WFP 802.3 MAC Layer LightWeight Filter-0000
+        MULTICAST mtu:-1 index:43
+
+]]></system-out>
+  </testcase>
+</testsuite>
