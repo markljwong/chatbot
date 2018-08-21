@@ -4,6 +4,8 @@ import chardet
 import codecs
 import purge
 
+from pathlib import Path
+
 acceptable_charsets = (
 	'utf-8',
 	'utf-8-sig',

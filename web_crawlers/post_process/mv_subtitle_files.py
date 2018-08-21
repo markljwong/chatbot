@@ -2,13 +2,15 @@ import os
 import shutil
 import sys
 
+from pathlib import Path
+
 def mv_subtitle_files(data_dir, filetype):
 	counter = 0
 
 	full_data_dir =Path(data_dir).resolve()
 	input_dir = os.path.join(full_data_dir, 'extracted')
 	output_dir = os.path.join(full_data_dir, "sorted")
-	filetype_dir = os.path.join(output_dir, fileType)
+	filetype_dir = os.path.join(output_dir, filetype)
 
 	if not os.path.isdir(output_dir):
 		os.makedirs(output_dir)
@@ -20,7 +22,7 @@ def mv_subtitle_files(data_dir, filetype):
 		for file in files:
 			if file.endswith(filetype):
 				print(file)
-				shutil.movefile(os.path.join(root, file), os.path.join(filetype_dir, file))
+				shutil.move(os.path.join(root, file), os.path.join(filetype_dir, file))
 				counter += 1
 
 	if counter > 0:

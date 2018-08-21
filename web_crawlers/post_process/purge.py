@@ -12,7 +12,6 @@ purgatory = (
 	'.docx',
 	'.nfo',
 	'.sub',
-	'.idx',
 	'.ttf',
 	'.TTF',
 	'.SRT',
@@ -27,34 +26,43 @@ def purge_files(data_dir, suffix):
 	u_counter = 0
 	e_counter = 0
 
+	is_root = False
+
 	print("[LOG]\tProcessing: " + data_dir, file=sys.stderr)
 
 	for root, dirs, files in os.walk(data_dir):
+		if len(dirs) == 0:
+			is_root = True
 		for directory in dirs:
 			purge_files(os.path.join(root, directory), suffix)
 		for file in files:
 			filepath = os.path.join(root, file)
 			if filepath.endswith(suffix):
+				os.remove(filepath)
 				print("[LOG]\tDirectory: " + root + " <===> Removed unwanted file " + file, file=sys.stderr)
-				os.remove(filepath)
 				u_counter += 1
+				continue
 			if os.stat(filepath).st_size == 0:
-				print("[LOG]\tDirectory: " + root + " <===> Removed empty file " + file, file=sys.stderr)
 				os.remove(filepath)
+				print("[LOG]\tDirectory: " + root + " <===> Removed empty file " + file, file=sys.stderr)
 				e_counter += 1
 
-	print("-------------------------")	
-	print("[INFO]\tFile purge successfully completed for type: " + suffix)
-	print("[INFO]\tUnwanted files: " + str(u_counter) + ", Empty files: " + str(e_counter) + "\n")
-
+	if not is_root:
+		print("-------------------------")	
+		print("[INFO]\tFile purge successfully completed for type: " + suffix)
+		print("[INFO]\tUnwanted files: " + str(u_counter) + ", Empty files: " + str(e_counter) + "\n")
 
 # Return the abandoned homes to dust after the cleansing fires has burnt all who deserve it
 def purge_empty_dirs(data_dir):
 	# Counter for removed directories
 	dir_counter = 0
 
+	is_root = False
+
 	print("[LOG]\tProcessing: " + data_dir, file=sys.stderr)
 	for root, dirs, files in os.walk(data_dir):
+		if len(dirs) == 0:
+			is_root = True
 		for directory in dirs:
 			purge_empty_dirs(os.path.join(root, directory))
 		if len(files) == 0 and len(dirs) == 0:
@@ -62,9 +70,10 @@ def purge_empty_dirs(data_dir):
 			os.rmdir(root)
 			dir_counter += 1
 
-	print("-------------------------")	
-	print("[INFO]\tDirectory purge successfully completed.")
-	print("[INFO]\tEmpty directories: " + str(dir_counter) + "\n")
+	if not is_root:
+		print("-------------------------")	
+		print("[INFO]\tDirectory purge successfully completed.")
+		print("[INFO]\tEmpty directories: " + str(dir_counter) + "\n")
 
 if __name__ == '__main__':
 	data_dir = ''

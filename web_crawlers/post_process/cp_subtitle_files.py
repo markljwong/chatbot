@@ -2,6 +2,8 @@ import os
 import shutil
 import sys
 
+from pathlib import Path
+
 def cp_subtitle_files(data_dir, filetype):
 	counter = 0
 
@@ -20,7 +22,7 @@ def cp_subtitle_files(data_dir, filetype):
 		for file in files:
 			if file.endswith(filetype):
 				print(file)
-				shutil.copyfile(os.path.join(root, file), os.path.join(filetype_dir, file))
+				shutil.copy(os.path.join(root, file), os.path.join(filetype_dir, file))
 				counter += 1
 
 	if counter > 0:
