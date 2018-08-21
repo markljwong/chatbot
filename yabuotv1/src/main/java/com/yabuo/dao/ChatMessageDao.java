@@ -26,8 +26,8 @@ import java.util.UUID;
 
 @Repository
 public class ChatMessageDao {
-	private final String INDEX = "ChatMessageData";
-	private final String TYPE = "ChatMessages";
+	private final String INDEX = "$[elasticsearch.index}";
+	private final String TYPE = "${elasticsearch.type}";
 	private RestHighLevelClient restHighLevelClient;
 	private ObjectMapper objectMapper;
 
@@ -47,8 +47,8 @@ public class ChatMessageDao {
 			IndexResponse response = restHighLevelClient.index(indexRequest);
 		} catch(ElasticsearchException e) {
 			e.getDetailedMessage();
-		} catch(java.io.IOException ex) {
-			ex.getLocalizedMessage();
+		} catch(java.io.IOException e) {
+			e.getLocalizedMessage();
 		}
 
 		return chatMessage;
@@ -56,6 +56,8 @@ public class ChatMessageDao {
 
 	public Map<String, Object> getChatMessageById(String id) {
 		GetRequest getRequest = new GetRequest(INDEX, TYPE, id);
+		System.out.println(TYPE);
+		System.out.println(id);
 		GetResponse getResponse = null;
 
 		try {
@@ -72,7 +74,7 @@ public class ChatMessageDao {
 		UpdateRequest updateRequest = new UpdateRequest(INDEX, TYPE, id)
 				.fetchSource(true);
 		Map<String, Object> error = new HashMap<>();
-		error.put("Error", "Unable to update book");
+		error.put("Error", "Unable to update Chat Message");
 
 		try {
 			String chatMessageJson = objectMapper.writeValueAsString(chatMessage);

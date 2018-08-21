@@ -16,7 +16,9 @@ filters = [
 	"翻译:",
 	"后期:",
 	"监制:",
+	"协调",
 	"禁止用作任何商业盈利行为",
+	"禁止用于商业用途",
 	"http",
 ]
 
@@ -136,13 +138,13 @@ def purify(data_dir):
 						phrase = phrase + '\n'
 						fw.write(codecs.encode(phrase, 'utf-8'))
 						phrase = phrase.replace('\n', '')
-						# print("[LOG]\tPhrase: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Written to file", file=sys.stderr)
+						print("[LOG]\tPhrase: " + phrase + "\n\t\t\t\t\t\t\t\t <===> Written to file", file=sys.stderr)
 						pure_phrases += 1
 				except OSError as e:
 					print("[ERROR]\tOutput file (purified_full.txt) could not be opened for writing. Skipping\n", file=sys.stderr)
 
 	except Exception as e:
-		print("[ERROR]\tInput file (lang_filtered_full.txt) must be in UTF-8 format. Quitting\n", file=sys.stderr)
+		print("[FATAL]\tInput file (lang_filtered_full.txt) must be in UTF-8 format. Quitting\n", file=sys.stderr)
 		exit(1)
 
 	print("-------------------------")	

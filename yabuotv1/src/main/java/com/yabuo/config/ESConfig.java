@@ -2,6 +2,9 @@ package com.yabuo.config;
 
 import org.apache.http.HttpHost;
 
+import org.elasticsearch.ElasticsearchException;
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
+import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 
@@ -49,14 +52,23 @@ public class ESConfig extends AbstractFactoryBean<RestHighLevelClient> {
 	}
 
 	private RestHighLevelClient buildClient() {
+
+
 		try {
 			restHighLevelClient = new RestHighLevelClient(
 					RestClient.builder(
 							new HttpHost("localhost", 9200, "http"),
 							new HttpHost("localhost", 9201, "http"))
 			);
-		}catch (Exception e) {
+		}catch(Exception e) {
 			LOG.error(e.getMessage());
+		}
+
+		try {
+			CreateIndexRequest createIndexRequest = new CreateIndexRequest("${elasticsearch.index");
+			restHighLevelClient.indices().create(createIndexRequest);
+		} catch(java.io.IOException e) {
+			e.getLocalizedMessage();
 		}
 
 		return restHighLevelClient;

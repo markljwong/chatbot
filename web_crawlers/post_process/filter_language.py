@@ -304,6 +304,7 @@ if __name__ == '__main__':
 		print("[INFO]\tWill NOT filter .ass files.\n")
 
 	print("[INFO]\tCollect all phrases in one file (If not, then each subtitle file will have its own output file?")
+	print("[INFO]\tNote: To perform further processing, file MUST be in one file format.")
 	print("[INFO]\t[Y]es, [N]o\n")
 
 	sin_file_response = input("[INPUT]\tCommand: ")
