@@ -5,10 +5,9 @@ __pycache__
 .classpath
 .project
 .settings
-virtualenv
 Data
 extracted
 sorted
 raw
 results
-
+test
