@@ -8,20 +8,20 @@ from new_zimuku_crawler.items import NewZimukuCrawlerItem
 class NewZimukuCrawler(scrapy.Spider):
 	name = "new_zimuku_crawler"
 	allowed_domains = [
-		"zimuku.cn",
+		"zimuku.la",
 		"subku.net",
 	]
 
 	# List to hold all search result pages
 	url_list = [
-		"https://www.zimuku.cn/search?q=&p=1",
-		"https://www.zimuku.cn/search?q=&p=2",
+		"https://www.zimuku.la/search?q=&p=1",
+		"https://www.zimuku.la/search?q=&p=2",
 	]
 
 	# Generate search result urls automatically
 	counter = 3
 	while counter <= 2369:
-		url_list.append("https://www.zimuku.cn/search?q=&p=" + str(counter))
+		url_list.append("https://www.zimuku.la/search?q=&p=" + str(counter))
 		counter += 1
 
 	print("[INFO]\tURL list generated.")
